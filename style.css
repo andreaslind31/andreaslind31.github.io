@@ -4,12 +4,16 @@ body {
     padding: 0;
     font-family: 'Roboto';
 }
+header img{
+    max-width: 1000px;
+}
 #home {
     max-width: 1000px;
     margin: 0 auto;
 }
 header nav {
     background-color:lightgray;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items:center;
@@ -27,10 +31,50 @@ nav a:hover {
 nav button{
     align-items: flex-end;
 }
+#home{
+    width: 1000px;
+     margin-left: auto;
+     margin-right: auto;
+}
+#leftmenu {
+    background-color: lightslategray;
+    float: left;
+    width: 25%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#main {
+    float: right;
+    width: 70%;
+    margin-bottom: 300px;
+}
 input {
     display: flex;
     justify-content: space-around;
     margin: 2;
     font-size: 1rem;
     transition: all 1s ease;
+}
+footer {
+    background-color: lightslategray;
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    height: 200px;
+    padding: 3rem 10rem 2rem 0rem;
+}
+footer article {
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: white;
+    width: auto;
+    height: 150px;
+}
+#contact div{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+#contact > div > span{
+    margin-left: 15px;
 }
