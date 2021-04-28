@@ -1,0 +1,12 @@
+input {
+    display: flex;
+    justify-content: space-around;
+    margin: 2;
+    font-size: 1rem;
+    transition: all 1s ease;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
