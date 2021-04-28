@@ -1,8 +1,20 @@
+
 <header>
-            <button type="button" onclick="changeToSwedish()">Svenska</button>
-            <button type="button" onclick="changeToEnglish()">English</button>
+            <nav>
+                <a href="#home">OM MIG</a>
+                <a href="project1.html">PROJEKT 1</a>
+                <a href="project2.html">PROJEKT 2</a>
+                <a href="project3.html">PROJEKT 3</a>
+                <a href="#contact">KONTAKT</a>
+                <button type="button" onclick="changeToSwedish()">Svenska</button>
+                <button type="button" onclick="changeToEnglish()">English</button>
+            </nav>
         </header>
-<h2>Pluralsights sida för att göra ditt konto</h2>
+        <section>
+            <h2>OM MIG</h2>
+
+        </section>
+        <h2>Låt mig kontakta dig!</h2>
         <p>Lägg in de värden som står</p>
         <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
             <span id="Name">Namn:</span> <input type="text" name="fname"><br>
@@ -16,4 +28,11 @@
             <label for="checkbox5"> Hallå, jag är ju inget sportfreak?!</label>
             <input id="checkbox5" type="checkbox" name="sport5" value="Jag är inget sportfreak. Lol wtf." checked>
             <input type="submit" value="Submit">
-            <p>Om du lämnar någon del tom så blir det fel. Såklart.</p>
+            <footer>
+            <h2 id="contact">Kontakta mig</h2>
+            <div>
+                <img src="mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                <br>
+                <img src="LI-In-Bug.png"><a href="https://www.linkedin.com/in/andreas-lind31/">LinkedIn</a>
+            </div>
+        </footer>

@@ -34,7 +34,7 @@
                 return false;
             }
             if (document.querySelector("#checkbox3:checked") !== null &&
-             document.querySelector("#checkbox5:checked") !== null ) {
+                document.querySelector("#checkbox5:checked") !== null) {
                 alert("You have checked both boxes. Can't decide?!");
                 return false;
             }
@@ -52,7 +52,7 @@
                     document.getElementById("home").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "change_to_swedish.txt", true);
+            xhttp.open("GET", "txtfiles/change_to_swedish.txt", true);
             xhttp.send();
 
         }
@@ -63,22 +63,33 @@
                     document.getElementById("home").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "change_to_english.txt", true);
+            xhttp.open("GET", "txtfiles/change_to_english.txt", true);
             xhttp.send();
 
         }
     </script>
-
 </head>
 
 <body>
     <div id="home">
         <header>
-            <button type="button" onclick="changeToSwedish()">Svenska</button>
-            <button type="button" onclick="changeToEnglish()">English</button>
+            <nav>
+                <a href="#home">ABOUT ME</a>
+                <a href="project1.html">PROJECT 1</a>
+                <a href="project2.html">PROJECT 2</a>
+                <a href="project3.html">PROJECT 3</a>
+                <a href="#contact">CONTACT</a>
+                <button type="button" onclick="changeToSwedish()">Svenska</button>
+                <button type="button" onclick="changeToEnglish()">English</button>
+            </nav>
         </header>
-        <h2>Pluralsights site for creating your account</h2>
+        <section>
+            <h2>ABOUT ME</h2>
+
+        </section>
+        <h2>Let me contact you!</h2>
         <p>Insert the values specified</p>
+        <!-- <p>Lind - en hård träskalle med rötterna stabilt förankrade i .NET</p> -->
 
         <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
             <span id="Name">Name:</span> <input type="text" name="fname"><br>
@@ -92,8 +103,15 @@
             <label for="checkbox5"> Dude, I'm no goddamn sportfreak?!</label>
             <input id="checkbox5" type="checkbox" name="sport5" value="I'm no sportfreak. Lol, wtf." checked>
             <input type="submit" value="Submit">
-            <p>If you leave a box empty it will throw an error.</p>
         </form>
+        <footer>
+            <h2 id="contact">Contact me</h2>
+            <div>
+                <img src="mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                <br>
+                <img src="LI-In-Bug.png"><a href="https://www.linkedin.com/in/andreas-lind31/">LinkedIn</a>
+            </div>
+        </footer>
     </div>
 </body>
 <script src="utils.js"></script>

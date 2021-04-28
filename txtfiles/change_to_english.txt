@@ -1,8 +1,19 @@
 <header>
-            <button type="button" onclick="changeToSwedish()">Svenska</button>
-            <button type="button" onclick="changeToEnglish()">English</button>
+            <nav>
+                <a href="#home">ABOUT ME</a>
+                <a href="project1.html">PROJECT 1</a>
+                <a href="project2.html">PROJECT 2</a>
+                <a href="project3.html">PROJECT 3</a>
+                <a href="#contact">CONTACT</a>
+                <button type="button" onclick="changeToSwedish()">Svenska</button>
+                <button type="button" onclick="changeToEnglish()">English</button>
+            </nav>
         </header>
-        <h2>Pluralsights site for creating your account</h2>
+        <section>
+            <h2>ABOUT ME</h2>
+
+        </section>
+        <h2>Let me contact you!</h2>
         <p>Insert the values specified</p>
 
         <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
@@ -17,4 +28,11 @@
             <label for="checkbox5"> Dude, I'm no goddamn sportfreak?!</label>
             <input id="checkbox5" type="checkbox" name="sport5" value="I'm no sportfreak. Lol, wtf." checked>
             <input type="submit" value="Submit">
-            <p>If you leave a box empty it will throw an error.</p>
+            <footer>
+            <h2 id="contact">Contact me</h2>
+            <div>
+                <img src="mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                <br>
+                <img src="LI-In-Bug.png"><a href="https://www.linkedin.com/in/andreas-lind31/">LinkedIn</a>
+            </div>
+        </footer>

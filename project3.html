@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Andreas Lind - project 3</title>
+    <script>
+        function changeToSwedish() {
+           let xhttp = new XMLHttpRequest();
+           xhttp.onreadystatechange = function () {
+               if (this.readyState == 4 && this.status == 200) {
+                   document.getElementById("home").innerHTML = this.responseText;
+               }
+           };
+           xhttp.open("GET", "change_to_swedish.txt", true);
+           xhttp.send();
+
+       }
+       function changeToEnglish() {
+           let xhttp = new XMLHttpRequest();
+           xhttp.onreadystatechange = function () {
+               if (this.readyState == 4 && this.status == 200) {
+                   document.getElementById("home").innerHTML = this.responseText;
+               }
+           };
+           xhttp.open("GET", "change_to_english.txt", true);
+           xhttp.send();
+
+       }
+   </script>
+</head>
+
+<body>
+    <div id="home">
+        <header>
+            <nav>
+                <a href="#home">ABOUT ME</a>
+                <a href="project1.html">PROJECT 1</a>
+                <a href="project2.html">PROJECT 2</a>
+                <a href="project3.html">PROJECT 3</a>
+                <a href="#contact">CONTACT</a>
+                <button type="button" onclick="changeToSwedish()">Svenska</button>
+                <button type="button" onclick="changeToEnglish()">English</button>
+            </nav>
+        </header>
+    </div>
+</body>
+
+</html>
