@@ -1,0 +1,20 @@
+<header>
+            <button type="button" onclick="changeToSwedish()">Svenska</button>
+            <button type="button" onclick="changeToEnglish()">English</button>
+        </header>
+        <h2>Pluralsights site for creating your account</h2>
+        <p>Insert the values specified</p>
+
+        <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
+            <span id="Name">Name:</span> <input type="text" name="fname"><br>
+            <span id="Age">Age:</span> <input type="number" name="age"><br>
+            <span id="Mail">Mail:</span> <input type="text" name="mail"><br>
+            <span id="Date">Date: </span> <input type="datetime" name="date"><br>
+            <br>
+            <label for="checkbox3"> I'm interested in floorball</label>
+            <input id="checkbox3" type="checkbox" name="sport3" value="Floorball is theee best!">
+            <br>
+            <label for="checkbox5"> Dude, I'm no goddamn sportfreak?!</label>
+            <input id="checkbox5" type="checkbox" name="sport5" value="I'm no sportfreak. Lol, wtf." checked>
+            <input type="submit" value="Submit">
+            <p>If you leave a box empty it will throw an error.</p>

@@ -1,1 +1,96 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+        function validateForm() {
+            var a = document.forms["myForm"]["fname"].value;
+            var b = document.forms["myForm"]["age"].value;
+            var c = document.forms["myForm"]["mail"].value;
+            var d = document.forms["myForm"]["date"].value;
+            if (a === "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (b === "") {
+                alert("Age must be filled out");
+                return false;
+            }
+            if (c === "") {
+                alert("Mail must be filled out");
+                return false;
+            }
+            if (d === null) {
+                alert("Date must be filled out");
+                return false;
+            }
+            else if (validateEmail(c) == false) {
+                alert("Write a correct email")
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function changeToSwedish() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("home").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "change_to_swedish.txt", true);
+            xhttp.send();
+
+        }
+        function changeToEnglish() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("home").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "change_to_english.txt", true);
+            xhttp.send();
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="home">
+        <header>
+            <button type="button" onclick="changeToSwedish()">Svenska</button>
+            <button type="button" onclick="changeToEnglish()">English</button>
+        </header>
+        <h2>Pluralsights site for creating your account</h2>
+        <p>Insert the values specified</p>
+
+        <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
+            <span id="Name">Name:</span> <input type="text" name="fname"><br>
+            <span id="Age">Age:</span> <input type="number" name="age"><br>
+            <span id="Mail">Mail:</span> <input type="text" name="mail"><br>
+            <span id="Date">Date: </span> <input type="datetime" name="date"><br>
+            <br>
+            <label for="checkbox3"> I'm interested in floorball</label>
+            <input id="checkbox3" type="checkbox" name="sport3" value="Floorball is theee best!">
+            <br>
+            <label for="checkbox5"> Dude, I'm no goddamn sportfreak?!</label>
+            <input id="checkbox5" type="checkbox" name="sport5" value="I'm no sportfreak. Lol, wtf." checked>
+            <input type="submit" value="Submit">
+            <p>If you leave a box empty it will throw an error.</p>
+        </form>
+    </div>
+</body>
+<script src="utils.js"></script>
+
+</html>

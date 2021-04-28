@@ -1,0 +1,19 @@
+<header>
+            <button type="button" onclick="changeToSwedish()">Svenska</button>
+            <button type="button" onclick="changeToEnglish()">English</button>
+        </header>
+<h2>Pluralsights sida för att göra ditt konto</h2>
+        <p>Lägg in de värden som står</p>
+        <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
+            <span id="Name">Namn:</span> <input type="text" name="fname"><br>
+            <span id="Age">Ålder:</span> <input type="number" name="age"><br>
+            <span id="Mail">Ee-Mäijl:</span> <input type="text" name="mail"><br>
+            <span id="Date">Dagens datum: </span> <input type="datetime" name="date"><br>
+            <br>
+            <label for="checkbox3"> Jag är intresserad av innebandy</label>
+            <input id="checkbox3" type="checkbox" name="sport3" value="Innebandy är sååå najs!">
+            <br>
+            <label for="checkbox5"> Hallå, jag är ju inget sportfreak?!</label>
+            <input id="checkbox5" type="checkbox" name="sport5" value="Jag är inget sportfreak. Lol wtf." checked>
+            <input type="submit" value="Submit">
+            <p>Om du lämnar någon del tom så blir det fel. Såklart.</p>
