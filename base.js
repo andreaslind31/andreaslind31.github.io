@@ -30,6 +30,12 @@ function showMessage(message) {
 function showHobby(message) {
     document.getElementById("hobby").textContent = message;
 }
+function showMail(message) {
+    document.getElementById("mail").textContent = message;
+}
+function showDate(message) {
+    document.getElementById("date").textContent = message;
+}
 let person = {
     fname: fname,
     age: age,
@@ -38,21 +44,28 @@ let person = {
     innebandy: innebandy,
     sportintresse: ejSportFreak,
     showInfo: function () {
-        showMessage(this.fname + ", " + this.age + ", with mail: " + this.mail +
-            ". Account created: " + this.date)
+        showMessage(this.fname + ", " + this.age)
     },
     showInfoHobby: function () {
-        if (ejSportFreak !== "" && innebandy !== "") {
-            showHobby("Fun fact: You have checked both boxes. Can't decide?")
+        if (ejSportFreak !== null) {
+            showHobby( this.sportintresse)
         }
-        else if (ejSportFreak !== "") {
-            showHobby("Fun fact: " + this.sportintresse)
+        else if (floorball !== null) {
+            showHobby( this.floorball)
         }
-        else if (innebandy !== "") {
-            showHobby("Fun fact: " + this.innebandy)
-
+        else {
+            showHobby("You are an empty soul." +
+            " With neither interest in floorball or being 'not interested in sports'. Doesnt even make sense.")
         }
+    },
+    showInfoMail: function(){
+        showMail(this.mail)
+    },
+    showInfoDate: function(){
+        showDate(this.date)
     }
 }
 person.showInfo();
+showMail(person.mail);
+showDate(person.date);
 person.showInfoHobby();

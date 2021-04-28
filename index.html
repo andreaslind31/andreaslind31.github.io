@@ -6,34 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Andreas Lind - portfolio</title>
     <script>
         function validateEmail(email) {
             var re = /\S+@\S+\.\S+/;
             return re.test(email);
         }
         function validateForm() {
-            var a = document.forms["myForm"]["fname"].value;
-            var b = document.forms["myForm"]["age"].value;
-            var c = document.forms["myForm"]["mail"].value;
-            var d = document.forms["myForm"]["date"].value;
-            if (a === "") {
+            let fname = document.forms["myForm"]["fname"].value;
+            let age = document.forms["myForm"]["age"].value;
+            let mail = document.forms["myForm"]["mail"].value;
+            let date = document.forms["myForm"]["date"].value;
+            if (fname === "") {
                 alert("Name must be filled out");
                 return false;
             }
-            if (b === "") {
+            if (age === "") {
                 alert("Age must be filled out");
                 return false;
             }
-            if (c === "") {
+            if (mail === "") {
                 alert("Mail must be filled out");
                 return false;
             }
-            if (d === null) {
+            if (date === null) {
                 alert("Date must be filled out");
                 return false;
             }
-            else if (validateEmail(c) == false) {
+            if (document.querySelector("#checkbox3:checked") !== null &&
+             document.querySelector("#checkbox5:checked") !== null ) {
+                alert("You have checked both boxes. Can't decide?!");
+                return false;
+            }
+            else if (validateEmail(mail) == false) {
                 alert("Write a correct email")
                 return false;
             } else {
