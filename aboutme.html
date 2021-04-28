@@ -6,16 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Andreas Lind - project 1</title>
+    <title>Andreas Lind - portfolio</title>
     <script>
-         function changeToSwedish() {
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+        function validateForm() {
+            let fname = document.forms["myForm"]["fname"].value;
+            let age = document.forms["myForm"]["age"].value;
+            let mail = document.forms["myForm"]["mail"].value;
+            let date = document.forms["myForm"]["date"].value;
+            if (fname === "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (age === "") {
+                alert("Age must be filled out");
+                return false;
+            }
+            if (mail === "") {
+                alert("Mail must be filled out");
+                return false;
+            }
+            if (date === null) {
+                alert("Date must be filled out");
+                return false;
+            }
+            if (document.querySelector("#checkbox3:checked") !== null &&
+                document.querySelector("#checkbox5:checked") !== null) {
+                alert("You have checked both boxes. Can't decide?!");
+                return false;
+            }
+            else if (validateEmail(mail) == false) {
+                alert("Write a correct email")
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function changeToSwedish() {
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("home").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "change_to_swedish.txt", true);
+            xhttp.open("GET", "txtfiles/change_to_swedish.txt", true);
             xhttp.send();
 
         }
@@ -26,7 +63,7 @@
                     document.getElementById("home").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "change_to_english.txt", true);
+            xhttp.open("GET", "txtfiles/change_to_english.txt", true);
             xhttp.send();
 
         }
@@ -39,7 +76,7 @@
             <img src="IMG_2530.jpg">
             <nav>
                 <a href="index.html">HOME</a>
-                <a href="aboutme.html">ABOUT ME</a>
+                <a href="#home">ABOUT ME</a>
                 <a href="project1.html">PROJECT 1</a>
                 <a href="project2.html">PROJECT 2</a>
                 <a href="project3.html">PROJECT 3</a>
@@ -66,8 +103,7 @@
         </aside>
         <main id="main">
             <article>
-                <h2>Project 1 - A hamster kindergarten</h2>
-                <h3>Made with C#, T-SQL, Entityframework Core</h3>
+                <h2>ABOUT ME</h2>
                 <p>
                     For many years, Bethany has been making the most delicous pies at her home.
 
@@ -85,9 +121,13 @@
                     webstore, making it possible to order Bethany's delicious pies whenever you feel like it!
 
                 </p>
+                <img src="IMG_8527 (2).jpg" width="80%">
             </article>
-            <h3>BILD HÄR</h3>
         </main>
+
+        <!-- <p>Lind - en hård träskalle med rötterna stabilt förankrade i .NET</p> -->
+
+
         <footer>
             <article id="contact">
                 <h3>Contact me</h3>
@@ -102,5 +142,6 @@
         </footer>
     </div>
 </body>
+<script src="utils.js"></script>
 
 </html>
