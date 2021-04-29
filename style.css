@@ -6,6 +6,9 @@ body {
 }
 header img{
     max-width: 1000px;
+    border: rgb(243, 243, 243);
+    border-start-end-radius:  2%;
+    border-start-start-radius:  2%;
 }
 #home {
     max-width: 1000px;
@@ -44,8 +47,9 @@ nav button{
     width: 25%;
     margin-top: 40px;
     margin-bottom: 20px;
-    height:500px;
-    
+    height:600px;
+    border:  rgb(216, 216, 211);
+    border-radius: 2%;
 }
 #leftmenu h3{
 margin-left: 5%;
@@ -86,9 +90,8 @@ footer {
     display: flex;
     justify-content: flex-end;
     width: 85%;
-    height: 200px;
-    padding: 3rem 10rem 2rem 0rem;
-    
+    height: 150px;
+    padding: 4rem 6rem 4rem 2rem;
 }
 footer article {
     padding: 15px;
@@ -96,6 +99,8 @@ footer article {
     background-color: white;
     width: auto;
     height: 150px;
+    border: lightslategray;
+    border-radius: 5%;
 }
 #contact div{
     display: flex;

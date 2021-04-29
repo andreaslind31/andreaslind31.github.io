@@ -7,6 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Andreas Lind - portfolio</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script type="text/javascript">
+        function sendEmail() {
+            let subject = document.forms["myForm"]["mail"].value + ": " + document.forms["myForm"]["checkbox1"].value;
+            let body = document.forms["myForm"]["message"].value + ": " + document.forms["myForm"]["fname"].value;
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "andreaslindtesting@gmail.com",
+                Password: "Testing123!",
+                To: 'andreaslind31@gmail.com',
+                From: "andreaslindtesting@gmail.com",
+                Subject: subject,
+                Body: body,
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+        }</script>
     <script>
         function validateEmail(email) {
             var re = /\S+@\S+\.\S+/;
@@ -14,23 +33,18 @@
         }
         function validateForm() {
             let fname = document.forms["myForm"]["fname"].value;
-            let age = document.forms["myForm"]["age"].value;
             let mail = document.forms["myForm"]["mail"].value;
-            let date = document.forms["myForm"]["date"].value;
+            let message = document.forms["myForm"]["message"].value;
             if (fname === "") {
                 alert("Name must be filled out");
-                return false;
-            }
-            if (age === "") {
-                alert("Age must be filled out");
                 return false;
             }
             if (mail === "") {
                 alert("Mail must be filled out");
                 return false;
             }
-            if (date === null) {
-                alert("Date must be filled out");
+            if (message === "") {
+                alert("It helps to have a message");
                 return false;
             }
             if (document.querySelector("#checkbox3:checked") !== null &&
@@ -42,9 +56,11 @@
                 alert("Write a correct email")
                 return false;
             } else {
+                sendEmail();
                 return true;
             }
         }
+
         function changeToSwedish() {
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -88,16 +104,17 @@
         <aside id="leftmenu">
             <h3>Interested?</h3>
             <h4>Let me contact you!</h4>
-            <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
-                <span id="Name">Name:</span> <input type="text" name="fname"><br>
-                <span id="Mail">Mail:</span> <input type="text" name="mail"><br>
+            <form name="myForm" method="post">
+                <span id="name">Name:</span> <input type="text" name="fname"><br>
+                <span id="mail">Mail:</span> <input type="text" name="mail"><br>
+                <span id="message">Message:</span> <input type="text" name="message"><br>
                 <br>
                 <label for="checkbox3"> I'm from a company</label>
                 <input id="checkbox3" type="checkbox" name="checkbox1" value="Company!">
                 <br>
                 <label for="checkbox5"> Just interested</label>
                 <input id="checkbox5" type="checkbox" name="checkbox2" value="Just interested" checked>
-                <input id="button" type="submit" value="Submit">
+                <input id="button" type="button" value="Send Email" onclick="validateForm()" />
             </form>
         </aside>
         <main id="main">
@@ -108,17 +125,11 @@
                      as a .NET developer, graduating june 2022.<br>
                      <br>
                     <h4>Why the change of career?</h4>
-                    I've always been interested in computers and games. At 2018 I was 
-                    The lessons I've learned throghout this journey in the armed forces is that<br>    
-                    <strong> always have a <i>plan b</i> thought out, whatever you do.</strong>
+                    I've always been interested in computers and games. At 2016 I was introduced to the world of programming<br>
+                    by my brother-in-law which was studying at the time computer engineering in Stockholm.
 
-                    In 2015, no less than 100 pies were baked every day and Bethany's Pie Shop moved into a larger
-                    building.
-                    After receiving many requests, it became clear that our next step was making it possible to order
-                    smashings from the
-                    comfort of your own home and from anywhere in the world. You are now looking at the result of this:
-                    our very own
-                    webstore, making it possible to order Bethany's delicious pies whenever you feel like it!
+                    The lessons I've learned throghout this journey in the armed forces is that<br>    
+                    <strong> always have a <i>plan b</i></strong> thought out, whatever you do.<br>
 
                 </p>
                 <img src="IMG_8527 (2).jpg" width="60%">
