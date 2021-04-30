@@ -1,70 +1,63 @@
 <header>
-            <img src="IMG_2530.jpg">
+            <img src="img/IMG_2530.jpg">
             <nav>
-                <a href="index.html">HOME</a>
-                <a href="#home">ABOUT ME</a>
-                <a href="project1.html">PROJECT 1</a>
-                <a href="project2.html">PROJECT 2</a>
-                <a href="project3.html">PROJECT 3</a>
-                <a href="#contact">CONTACT</a>
+                <a href="index.html">HEM</a>
+                <a href="#home">OM MIG</a>
+                <a href="project1.html">PROJEKT 1</a>
+                <a href="project2.html">PROJEKT 2</a>
+                <a href="project3.html">PROJEKT 3</a>
+                <a href="#contact">KONTAKT</a>
+                <button type="button" onclick="changeToDarkmode()">Mörkt läge</button>
                 <button type="button" onclick="changeToSwedish()">Svenska</button>
                 <button type="button" onclick="changeToEnglish()">English</button>
             </nav>
         </header>
         <aside id="leftmenu">
             <h3>Intresserad?</h3>
-            <h4>Låt mig kontakta dig!</h4>
-            <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
-                <span id="Name">Namn:</span> <input type="text" name="fname"><br>
-                <span id="Mail">E-mail:</span> <input type="text" name="mail"><br>
+            <h4>Kontakta mig!</h4>
+            <form name="myForm" method="post">
+                <span id="name">Namn:</span> <input type="text" name="fname"><br>
+                <span id="mail">Mail:</span> <input type="text" name="mail"><br>
+                <span id="message">Meddelande:</span> <input type="text" name="message"><br>
                 <br>
-                <label for="checkbox3"> Jag är från ett företag</label>
+                <label for="checkbox3">Jag är från ett företag</label>
                 <input id="checkbox3" type="checkbox" name="checkbox1" value="Company!">
                 <br>
                 <label for="checkbox5"> Bara intresserad</label>
                 <input id="checkbox5" type="checkbox" name="checkbox2" value="Just interested" checked>
-                <input id="button" type="submit" value="Submit">
+                <input id="button" type="button" value="Skicka Email" onclick="validateForm()" />
             </form>
         </aside>
         <main id="main">
             <article>
                 <h2>OM MIG</h2>
+                <h3>ÖVERSÄTTNING ÄR PÅ G</h3>
                 <p>
-                Jag har arbetat som soldat i Försvarsmakten sedan 2011 men studerar<br>
-                nu till .NET utvecklare, examen juni 2022.
                     I have been working as a soldier in the Swedish Armed Forces since 2011 but is now studying<br>
-                     as a .NET developer, graduating june 2022.<br>
-                     <br>
-                    <h4>Why the change of career?</h4>
-                    I've always been interested in computers and games. At 2018 I was 
-                    The lessons I've learned throghout this journey in the armed forces is that<br>    
-                    <strong> always have a <i>plan b</i> thought out, whatever you do.</strong>
+                    as a .NET developer, graduating june 2022.<br>
+                    <br>
+                <h4>Can I put my experience to use in the world of code?</h4>
+                I've always been interested in computers and games. At 2016 I was introduced to the world of programming
+                by my brother-in-law which was studying at the time computer engineering in Stockholm.
 
-                    In 2015, no less than 100 pies were baked every day and Bethany's Pie Shop moved into a larger
-                    building.
-                    After receiving many requests, it became clear that our next step was making it possible to order
-                    smashings from the
-                    comfort of your own home and from anywhere in the world. You are now looking at the result of this:
-                    our very own
-                    webstore, making it possible to order Bethany's delicious pies whenever you feel like it!
-
+                The lessons I've learned throghout this journey in the armed forces is that<br>
+                <strong> always have a <i>plan b</i></strong> thought out.<br>
+                Which has helped me in numerous ways both in school and otherwise.<br>
+                
                 </p>
-                <img src="IMG_8527 (2).jpg" width="60%">
+                <img src="img/IMG_8527 (2).jpg" width="60%">
             </article>
         </main>
-
-        <!-- <p>Lind - en hård träskalle med rötterna stabilt förankrade i .NET</p> -->
-
 
         <footer>
             <article id="contact">
                 <h3>Kontakta mig</h3>
                 <div>
-                    <img src="mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                    <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
                 </div>
                 <br>
                 <div>
-                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="LI-In-Bug.png"></a>
+                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
                 </div>
             </article>
         </footer>

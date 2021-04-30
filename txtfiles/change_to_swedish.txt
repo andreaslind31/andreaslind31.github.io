@@ -1,38 +1,57 @@
 
 <header>
+            <img src="img/IMG_2530.jpg">
             <nav>
-                <a href="#home">OM MIG</a>
+                <a href="#home">HEM</a>
+                <a href="aboutme.html">OM MIG</a>
                 <a href="project1.html">PROJEKT 1</a>
                 <a href="project2.html">PROJEKT 2</a>
                 <a href="project3.html">PROJEKT 3</a>
                 <a href="#contact">KONTAKT</a>
+                <button type="button" onclick="changeToDarkmode()">Mörkt läge</button>
                 <button type="button" onclick="changeToSwedish()">Svenska</button>
                 <button type="button" onclick="changeToEnglish()">English</button>
             </nav>
         </header>
-        <section>
-            <h2>OM MIG</h2>
-
-        </section>
-        <h2>Låt mig kontakta dig!</h2>
-        <p>Lägg in de värden som står</p>
-        <form name="myForm" action="action_page.html" onsubmit="return validateForm()" method="GET">
-            <span id="Name">Namn:</span> <input type="text" name="fname"><br>
-            <span id="Age">Ålder:</span> <input type="number" name="age"><br>
-            <span id="Mail">Ee-Mäijl:</span> <input type="text" name="mail"><br>
-            <span id="Date">Dagens datum: </span> <input type="datetime" name="date"><br>
-            <br>
-            <label for="checkbox3"> Jag är intresserad av innebandy</label>
-            <input id="checkbox3" type="checkbox" name="sport3" value="Innebandy är sååå najs!">
-            <br>
-            <label for="checkbox5"> Hallå, jag är ju inget sportfreak?!</label>
-            <input id="checkbox5" type="checkbox" name="sport5" value="Jag är inget sportfreak. Lol wtf." checked>
-            <input type="submit" value="Submit">
-            <footer>
-            <h2 id="contact">Kontakta mig</h2>
-            <div>
-                <img src="mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+        <aside id="leftmenu">
+            <h3>Intresserad?</h3>
+            <h4>Kontakta mig!</h4>
+            <form name="myForm" method="post">
+                <span id="name">Namen</span> <input type="text" name="fname"><br>
+                <span id="mail">Mail:</span> <input type="text" name="mail"><br>
+                <span id="message">Meddelande:</span> <input type="text" name="message"><br>
                 <br>
-                <img src="LI-In-Bug.png"><a href="https://www.linkedin.com/in/andreas-lind31/">LinkedIn</a>
-            </div>
+                <label for="checkbox3">Jag är från ett företag</label>
+                <input id="checkbox3" type="checkbox" name="checkbox1" value="Company!">
+                <br>
+                <label for="checkbox5">Bara intresserad</label>
+                <input id="checkbox5" type="checkbox" name="checkbox2" value="Just interested" checked>
+                <input id="button" type="button" value="Skicka Email" onclick="validateForm()" />
+            </form>
+        </aside>
+        <main id="main">
+            <article>
+                <h2>Andreas Lind - portfolio</h2>
+                <h2>Översättning är på g!</h2>
+                <p>
+                    This site is mainly about showing of my skills as a programmer.<br>
+                    Which is kinda the whole idea of having a portfolio.<br>
+                    <br>
+                    Click on the different links above to know of any project you might want be interested in.
+
+                </p>
+            </article>
+        </main>
+
+        <footer>
+            <article id="contact">
+                <h3>kontakta mig</h3>
+                <div>
+                    <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                </div>
+                <br>
+                <div>
+                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
+                </div>
+            </article>
         </footer>

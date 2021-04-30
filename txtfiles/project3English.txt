@@ -1,0 +1,64 @@
+<header>
+            <img src="img/pexels-photo-270348.jpeg">
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="aboutme.html">ABOUT ME</a>
+                <a href="project1.html">PROJECT 1</a>
+                <a href="project2.html">PROJECT 2</a>
+                <a href="project3.html">PROJECT 3</a>
+                <a href="#contact">CONTACT</a>
+                <button type="button" onclick="changeToDarkmode()">Darkmode</button>
+                <button type="button" onclick="changeToSwedish()">Svenska</button>
+                <button type="button" onclick="changeToEnglish()">English</button>
+            </nav>
+        </header>
+        <aside id="leftmenu">
+            <h3>Interested?</h3>
+            <h4>Contact me!</h4>
+            <form name="myForm" method="post">
+                <span id="name">Name:</span> <input type="text" name="fname"><br>
+                <span id="mail">Mail:</span> <input type="text" name="mail"><br>
+                <span id="message">Message:</span> <input type="text" name="message"><br>
+                <br>
+                <label for="checkbox3"> I'm from a company</label>
+                <input id="checkbox3" type="checkbox" name="checkbox1" value="Company!">
+                <br>
+                <label for="checkbox5"> Just interested</label>
+                <input id="checkbox5" type="checkbox" name="checkbox2" value="Just interested" checked>
+                <input id="button" type="button" value="Send Email" onclick="validateForm()" />
+            </form>
+        </aside>
+        <main id="main">
+            <article>
+                <h2>Project 3 - Soon to be announced</h2>
+                <p>
+                <h3>Kolla upp hur man gör ett enkelt spel på denna sidan genom CSS & JS</h3>
+                <br>
+                In 2013, we opened our first pie Shop in Brussels (Belgium) in a cosy little street near the Grand
+                Market. People from all over the world fell in love
+                with the tenderness that Bethany & Co showed the pies...
+                <i>The Pie Shop became a success in no time.</i>
+                In 2015, no less than 100 pies were baked every day and Bethany's Pie Shop moved into a larger
+                building.
+                After receiving many requests, it became clear that our next step was making it possible to order
+                smashings from the
+                comfort of your own home and from anywhere in the world. You are now looking at the result of this:
+                our very own
+                webstore, making it possible to order Bethany's delicious pies whenever you feel like it!
+
+                </p>
+            </article>
+            <h3>BILD HÄR</h3>
+        </main>
+        <footer>
+            <article id="contact">
+                <h3>Contact me</h3>
+                <div>
+                    <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                </div>
+                <br>
+                <div>
+                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
+                </div>
+            </article>
+        </footer>
