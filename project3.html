@@ -86,6 +86,17 @@
             xhttp.send();
 
         }
+        function changeToDarkmode() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("styles").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "txtfiles/darkmode.txt", true);
+            xhttp.send();
+
+        }
     </script>
 </head>
 
