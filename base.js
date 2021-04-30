@@ -13,8 +13,6 @@ let fname = searchParams.get("fname");
 let mail = searchParams.get("mail");
 let company = searchParams.get("checkbox1");
 let justInterested = searchParams.get("checkbox2");
-let body = searchParams.get("")
-// let checkbox = searchParams.get("checkbox");
 
 console.log("Name: ", fname);
 console.log("Mail: ", mail);

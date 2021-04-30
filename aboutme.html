@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <div id="styles">
+        <link rel="stylesheet" href="style.css">
+    </div>
     <title>Andreas Lind - portfolio</title>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
@@ -25,7 +27,8 @@
                 .then(function (message) {
                     alert("mail sent successfully")
                 });
-        }</script>
+        }
+    </script>
     <script>
         function validateEmail(email) {
             var re = /\S+@\S+\.\S+/;
@@ -83,13 +86,24 @@
             xhttp.send();
 
         }
+        function changeToDarkmode() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("styles").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "txtfiles/darkmode.txt", true);
+            xhttp.send();
+
+        }
     </script>
 </head>
 
 <body>
     <div id="home">
         <header>
-            <img src="IMG_2530.jpg">
+            <img src="img/IMG_2530.jpg">
             <nav>
                 <a href="index.html">HOME</a>
                 <a href="#home">ABOUT ME</a>
@@ -97,6 +111,7 @@
                 <a href="project2.html">PROJECT 2</a>
                 <a href="project3.html">PROJECT 3</a>
                 <a href="#contact">CONTACT</a>
+                <button type="button" onclick="changeToDarkmode()">Darkmode</button>
                 <button type="button" onclick="changeToSwedish()">Svenska</button>
                 <button type="button" onclick="changeToEnglish()">English</button>
             </nav>
@@ -122,14 +137,15 @@
                 <h2>ABOUT ME</h2>
                 <p>
                     I have been working as a soldier in the Swedish Armed Forces since 2011 but is now studying<br>
-                     as a .NET developer, graduating june 2022.<br>
-                     <br>
-                    <h4>Why the change of career?</h4>
-                    I've always been interested in computers and games. At 2016 I was introduced to the world of programming<br>
-                    by my brother-in-law which was studying at the time computer engineering in Stockholm.
+                    as a .NET developer, graduating june 2022.<br>
+                    <br>
+                <h4>Why the change of career?</h4>
+                I've always been interested in computers and games. At 2016 I was introduced to the world of
+                programming<br>
+                by my brother-in-law which was studying at the time computer engineering in Stockholm.
 
-                    The lessons I've learned throghout this journey in the armed forces is that<br>    
-                    <strong> always have a <i>plan b</i></strong> thought out, whatever you do.<br>
+                The lessons I've learned throghout this journey in the armed forces is that<br>
+                <strong> always have a <i>plan b</i></strong> thought out, whatever you do.<br>
 
                 </p>
                 <img src="IMG_8527 (2).jpg" width="60%">
@@ -143,11 +159,11 @@
             <article id="contact">
                 <h3>Contact me</h3>
                 <div>
-                    <img src="mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                    <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
                 </div>
                 <br>
                 <div>
-                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="LI-In-Bug.png"></a>
+                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
                 </div>
             </article>
         </footer>
