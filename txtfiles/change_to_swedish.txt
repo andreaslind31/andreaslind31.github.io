@@ -45,7 +45,7 @@
 
         <footer>
             <article id="contact">
-                <h3>kontakta mig</h3>
+                <h3>Kontakta mig</h3>
                 <div>
                     <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
                 </div>
