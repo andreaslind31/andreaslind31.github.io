@@ -11,7 +11,9 @@
     <title>Andreas Lind - project 2</title>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <script type="text/javascript">
+    <!-- <script src="functions.js">
+    </script> -->
+    <script>
         function sendEmail() {
             let subject = document.forms["myForm"]["mail"].value + ": " + document.forms["myForm"]["checkbox1"].value;
             let body = document.forms["myForm"]["message"].value + ": " + document.forms["myForm"]["fname"].value;
@@ -28,8 +30,6 @@
                     alert("mail sent successfully")
                 });
         }
-    </script>
-    <script>
         function validateEmail(email) {
             var re = /\S+@\S+\.\S+/;
             return re.test(email);
@@ -63,7 +63,6 @@
                 return true;
             }
         }
-
         function changeToSwedish() {
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -71,7 +70,7 @@
                     document.getElementById("home").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "txtfiles/project2Swedish.txt", true);
+            xhttp.open("GET", "txtfiles/project1Swedish.txt", true);
             xhttp.send();
 
         }
@@ -82,7 +81,7 @@
                     document.getElementById("home").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "txtfiles/project2English.txt", true);
+            xhttp.open("GET", "txtfiles/project1English.txt", true);
             xhttp.send();
 
         }
@@ -97,6 +96,7 @@
             xhttp.send();
 
         }
+
     </script>
 </head>
 
