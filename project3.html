@@ -11,8 +11,6 @@
     <title>Andreas Lind - project 3</title>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <!-- <script src="functions.js">
-    </script> -->
     <script>
         function sendEmail() {
             let subject = document.forms["myForm"]["mail"].value + ": " + document.forms["myForm"]["checkbox1"].value;
@@ -136,14 +134,15 @@
             <article>
                 <h2>Project 3 - A game: What game? My game</h2>
                 <p>
-                <h2>Using: HTML5, CSS, JavaScript</h2>
-                <h2>Work in progress</h2>
+                <p>Using: HTML5, CSS, JavaScript</p>
+                    <h4>This is a 2D breakout game. You move the paddel with your mouse or with the right or left arrow. <br>
+                        You have 2 lives. Make it count!</h2>
             </article>
+            <button id="startButton">Start Game</button>
+            <canvas id='myCanvas' width="480" height="320">
+            </canvas>
         </main>
-        <!-- https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Create_the_Canvas_and_draw_on_it -->
-        <canvas id="myCanvas" width="480" height="320">
-            
-        </canvas>
+
         <footer>
             <article id="contact">
                 <h3>Contact me</h3>
@@ -157,6 +156,8 @@
             </article>
         </footer>
     </div>
+    <script src="game.js">
+    </script>
 </body>
 
 </html>

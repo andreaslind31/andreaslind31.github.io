@@ -99,7 +99,7 @@ footer article {
     background-color: white;
     width: auto;
     height: 150px;
-    border: lightslategray;
+    border: rgb(82, 54, 12);
     border-radius: 5%;
 }
 #contact div{
@@ -111,7 +111,7 @@ footer article {
     margin-left: 15px;
 }
 canvas{
-     background: #eee;
+     background: rgb(202, 199, 199);
      display: block; 
      margin: 0 auto; 
 }

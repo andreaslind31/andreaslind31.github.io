@@ -113,7 +113,7 @@ footer article {
     margin-left: 15px;
 }
 canvas{
-    background: #eee;
+    background: rgb(202, 199, 199);
     display: block; 
     margin: 0 auto; 
 }
