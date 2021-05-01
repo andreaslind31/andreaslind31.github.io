@@ -110,3 +110,8 @@ footer article {
 #contact > div > span{
     margin-left: 15px;
 }
+canvas{
+     background: #eee;
+     display: block; 
+     margin: 0 auto; 
+}
