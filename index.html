@@ -11,94 +11,8 @@
     <title>Andreas Lind - portfolio</title>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <!-- <script src="functions.js">
-    </script> -->
-    <script>
-        function sendEmail() {
-            let subject = document.forms["myForm"]["mail"].value + ": " + document.forms["myForm"]["checkbox1"].value;
-            let body = document.forms["myForm"]["message"].value + ": " + document.forms["myForm"]["fname"].value;
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "andreaslindtesting@gmail.com",
-                Password: "Testing123!",
-                To: 'andreaslind31@gmail.com',
-                From: "andreaslindtesting@gmail.com",
-                Subject: subject,
-                Body: body,
-            })
-                .then(function (message) {
-                    alert("mail sent successfully")
-                });
-        }
-        function validateEmail(email) {
-            var re = /\S+@\S+\.\S+/;
-            return re.test(email);
-        }
-        function validateForm() {
-            let fname = document.forms["myForm"]["fname"].value;
-            let mail = document.forms["myForm"]["mail"].value;
-            let message = document.forms["myForm"]["message"].value;
-            if (fname === "") {
-                alert("Name must be filled out");
-                return false;
-            }
-            if (mail === "") {
-                alert("Mail must be filled out");
-                return false;
-            }
-            if (message === "") {
-                alert("It helps to have a message");
-                return false;
-            }
-            if (document.querySelector("#checkbox3:checked") !== null &&
-                document.querySelector("#checkbox5:checked") !== null) {
-                alert("You have checked both boxes. Can't decide?!");
-                return false;
-            }
-            else if (validateEmail(mail) == false) {
-                alert("Write a correct email")
-                return false;
-            } else {
-                sendEmail();
-                return true;
-            }
-        }
-        function changeToSwedish() {
-            let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("home").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "txtfiles/project1Swedish.txt", true);
-            xhttp.send();
-
-        }
-        function changeToEnglish() {
-            let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("home").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "txtfiles/project1English.txt", true);
-            xhttp.send();
-
-        }
-        function changeToDarkmode() {
-            let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("styles").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "txtfiles/darkmode.txt", true);
-            xhttp.send();
-
-        }
-
+    <script src="base.js">
     </script>
-
 </head>
 
 <body>
@@ -106,15 +20,15 @@
         <header>
             <img src="img/IMG_2530.jpg">
             <nav>
-                <a href="#home">HOME</a>
-                <a href="aboutme.html">ABOUT ME</a>
-                <a href="project1.html">PROJECT 1</a>
-                <a href="project2.html">PROJECT 2</a>
-                <a href="project3.html">PROJECT 3</a>
+                <a href="#portfolio">HOME</a>
+                <a href="#aboutme">ABOUT ME</a>
+                <a href="#project1">PROJECT 1</a>
+                <a href="#project2">PROJECT 2</a>
+                <a href="#project3">PROJECT 3</a>
                 <a href="#contact">CONTACT</a>
-                <button type="button" onclick="changeToDarkmode()">Dark mode</button>
-                <button type="button" onclick="changeToSwedish()">Svenska</button>
-                <button type="button" onclick="changeToEnglish()">English</button>
+                <button id="darkmode" type="button">Dark mode</button>
+                <!-- <button type="button" onclick="changeToSwedish()">Svenska</button>
+                <button type="button" onclick="changeToEnglish()">English</button> -->
             </nav>
         </header>
         <aside id="leftmenu">
@@ -130,21 +44,109 @@
                 <br>
                 <label for="checkbox5"> Just interested</label>
                 <input id="checkbox5" type="checkbox" name="checkbox2" value="Just interested" checked>
-                <input id="button" type="button" value="Send Email" onclick="validateForm()" />
+                <button id="button" type="button" onclick="validateForm()">Send Email</button>
             </form>
         </aside>
         <main id="main">
-            <article>
-                <h2>Andreas Lind - portfolio</h2>
-                <p>
-                    This site is mainly about showing of my skills as a programmer.<br>
-                    Which is kinda the whole idea of having a portfolio.<br>
-                    <br>
-                    Click on the different links above to know of any project you might want be interested in.
+            <section id="portfolio">
+                <article>
+                    <h2>ANDREAS LIND - portfolio</h2>
+                    <p>
+                        Hi! I'm currently a .NET developer student at Campus Varberg, Sweden.
+                        Graduating 2022. <br>
+                        This is my portfolio page. <br>
+                        Feel free to contact me using the mail system to the left or through LinkedIn which I've linked
+                        in the bottom of the page.
+                        <!-- Lägg in en To-Do list här och för in att användaren skall kolla alla projekt -->
+                        <!-- https://www.w3schools.com/howto/howto_js_todolist.asp -->
+                    </p>
+                </article>
+            </section>
+            <section id="aboutme">
+                <article>
+                    <h2>ABOUT ME</h2>
+                    <p>
+                        I have been working as a soldier in the Swedish Armed Forces since 2011 but is now studying<br>
+                        as a .NET developer, graduating june 2022.<br>
+                        <br>
+                        I have experience in: <br>
+                        <li>C#</li>
+                        <li>T-SQL</li>
+                        <li>CSS</li>
+                        <li>HTML5</li>
+                        <li>JavaScript</li>
+                        <li>Go</li>
+                        <li>.NET</li>
+                        <li>Entity framework Core</li>
 
-                </p>
-            </article>
-            
+                    <h4>Can I put my experience to use in the world of code?</h4>
+                    I've always been interested in computers and games. At 2016 I was introduced to the world of
+                    programming by my brother-in-law which was studying at the time computer engineering in Stockholm.
+                    The lessons I've learned throghout this journey in the armed forces is that<br>
+                    <strong> always have a <i>plan b</i></strong> thought out.<br>
+                    Which has helped me in numerous ways both in school and otherwise.<br>
+
+                    </p>
+                    <img src="img/IMG_8527 (2).jpg" width="60%">
+                </article>
+            </section>
+            <section id="project1">
+                <article>
+                    <h2>A game: What game? My game</h2>
+                    <p>Using: HTML5, CSS, JavaScript
+                    <h3>This is a 2D breakout game.</h3>
+                    How to play: <br>
+                    You move the paddel with your mouse or with the right or left arrow.
+                    <br>
+                    <h4>You have 2 lives. Good luck!</h4>
+                    <br>
+                    <button id="startButton">Start Game</button>
+                    <canvas id='myCanvas' width="480" height="320">
+                    </canvas>
+                </article>
+
+            </section>
+            <section id="project2">
+                <article>
+                    <h2>The Unfortunate Few</h2>
+                    <h3>Made with C#, T-SQL, Entityframework Core, HTML, JS, CSS</h3>
+                    <p>
+                        For many years, Bethany has been making the most delicous pies at her home.
+
+                        In 2013, we opened our first pie Shop in Brussels (Belgium) in a cosy little street near the
+                        Grand
+                        Market. People from all over the world fell in love
+                        with the tenderness that Bethany & Co showed the pies...
+                        <i>The Pie Shop became a success in no time.</i>
+
+                        In 2015, no less than 100 pies were baked every day and Bethany's Pie Shop moved into a larger
+                        building.
+                        After receiving many requests, it became clear that our next step was making it possible to
+                        order
+                        smashings from the
+                        comfort of your own home and from anywhere in the world. You are now looking at the result of
+                        this:
+                        our very own
+                        webstore, making it possible to order Bethany's delicious pies whenever you feel like it!
+
+                    </p>
+                    <img src="img/pexels-photo-270348.jpeg" width="95%">
+                </article>
+
+            </section>
+            <section id="project3">
+                <article>
+                    <h2>A hamster kindergarten</h2>
+                    <h3>Made with C#, T-SQL, Entityframework Core</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                        Distinctio incidunt, mollitia porro, dolore nobis minus tenetur, ullam perspiciatis accusantium
+                        cumque voluptatibus iusto!
+                        Veritatis, odio? Aliquid dignissimos aspernatur sit odit eum.
+                    </p>
+                    <img src="img/pexels-photo-270348.jpeg" width="95%">
+                </article>
+            </section>
         </main>
 
         <footer>
@@ -160,7 +162,8 @@
             </article>
         </footer>
     </div>
-    
+    <script src="game.js">
+    </script>
 </body>
 
 </html>

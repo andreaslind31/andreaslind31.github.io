@@ -10,18 +10,17 @@ header img{
     border-start-end-radius:  2%;
     border-start-start-radius:  2%;
 }
-#home {
-    max-width: 1000px;
-    margin: 0 auto;
+#home{
+    width: 1000px;
+     margin-left: auto;
+     margin-right: auto;
 }
 header nav {
     background-color:lightgray;
     height: 40px;
     display: flex;
     justify-content: space-evenly;
-    align-items:center;
-    
-    
+    align-items:center;   
 }
 nav a {
     text-decoration: none;
@@ -36,11 +35,7 @@ nav a:hover {
 nav button{
     align-items: flex-end;
 }
-#home{
-    width: 1000px;
-     margin-left: auto;
-     margin-right: auto;
-}
+
 #leftmenu {
     background-color: rgb(216, 216, 211);
     float: left;
@@ -69,6 +64,7 @@ margin-left: 5%;
     margin-bottom: 30%;
 }
 #button{
+    margin-left: 3%;
     margin-top: 10%;
     width: 40%;
 }
@@ -77,6 +73,25 @@ margin-left: 5%;
     width: 70%;
     margin-top: 20px;
     margin-bottom: 300px;
+}
+#main section{
+    margin-top: 7%;
+}
+#main article{
+    margin-left: 5%;
+}
+section img{
+    margin-bottom: 10%;
+}
+#aboutme{
+    background-color: rgb(216, 216, 211);
+    border: rgb(216, 216, 211);
+    border-radius: 5%;
+}
+#project2{
+    background-color: rgb(216, 216, 211);
+    border: rgb(216, 216, 211);
+    border-radius: 5%;
 }
 input {
     display: flex;
