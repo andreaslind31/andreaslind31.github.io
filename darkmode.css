@@ -5,11 +5,30 @@ body {
     color:rgb(243, 243, 243);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-header img{
-    max-width: 1000px;
-    border: rgb(75, 74, 74);
-    border-start-end-radius:  2%;
-    border-start-start-radius:  2%;
+.header-bg {
+    position: relative;
+    height: 250px;
+    background-image: url("img/IMG_2530.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-bg__heading {
+    line-height: 49px;
+    position: absolute;
+    height: 520px;
+    width: 300px;
+    left: 18%;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    color:rgb(243, 243, 243);
+}
+.header-bg__heading-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: white;
 }
 #home{
     width: 1000px;
