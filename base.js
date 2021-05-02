@@ -8,8 +8,11 @@ let company = searchParams.get("checkbox1");
 let justInterested = searchParams.get("checkbox2");
 
 document.getElementById("button").addEventListener("click", startForm);
-document.getElementById("darkmode").addEventListener("click", changeToDarkmode);
+document.getElementById("darkmode").addEventListener("click", darkMode);
 
+function darkMode() {
+    changeToDarkmode()
+}
 function startForm(){
     validateForm()
 }
