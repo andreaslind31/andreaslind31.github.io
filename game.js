@@ -5,10 +5,10 @@ let x = canvas.width / 2;
 let y = canvas.height - 30;
 let dx = 3;
 let dy = -3;
-let dxMedium = 4;
-let dyMedium = -4;
-let dxHard = 6;
-let dyHard = -6;
+let dxMedium = 5;
+let dyMedium = -5;
+let dxHard = 7;
+let dyHard = -7;
 let ballRadius = 8;
 let paddleHeight = 10;
 let paddleWidth = 75;
@@ -160,8 +160,8 @@ function drawMedium() {
             else {
                 x = canvas.width / 2;
                 y = canvas.height - 30;
-                dxMedium = 4;
-                dyMedium = -4;
+                dxMedium = 5;
+                dyMedium = -5;
                 paddleX = (canvas.width - paddleWidth) / 2;
             }
         }
@@ -209,8 +209,8 @@ function drawHard() {
             else {
                 x = canvas.width / 2;
                 y = canvas.height - 30;
-                dxHard = 6;
-                dyHard = -6;
+                dxHard = 7;
+                dyHard = -7;
                 paddleX = (canvas.width - paddleWidth) / 2;
             }
         }
@@ -269,7 +269,7 @@ function collisionDetection() {
                     dy = -dy;
                     b.status = 0;
                     score++;
-                    paddleWidth = paddleWidth - 1;
+                    paddleWidth = paddleWidth - 2;
                     if (score == brickRowCount * brickColumnCount) {
                         alert("You won! Congrats! Try the more difficult versions. You got: " + score + "points at easy");
                         document.location.reload();
