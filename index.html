@@ -27,11 +27,13 @@
                 <!-- <h1 class="header-bg__heading-title">.NET developer</h1> -->
             </div>
             <nav>
+                <a href="#aboutme">ABOUT ME</a>
                 <a href="#project1">PROJECT 1</a>
                 <a href="#project2">PROJECT 2</a>
                 <a href="#project3">PROJECT 3</a>
                 <a href="#contact">CONTACT</a>
                 <button id="darkmode" type="button" onclick="changeToDarkmode()">Dark mode</button>
+                <button id="lightmode" type="button" onclick="changeToLightmode()">Light mode</button>
                 <!-- <button type="button" onclick="changeToSwedish()">Svenska</button>
                 <button type="button" onclick="changeToEnglish()">English</button> -->
             </nav>
@@ -54,7 +56,8 @@
                 </form>
                 <br>
                 <p><i>or contact me using these:</i></p>
-                <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a><br>
+                <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
+                <a href="https://github.com/andreaslind31"><img src="img/GitHub_Logo.png" width="100px"></a><br>
                 <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
             </div>
         </aside>
@@ -64,7 +67,9 @@
                     <h3> I'm a .NET developer student at Campus Varberg, Sweden.
                     </h3>
                     <p>
-                    <h3>This is my portfolio page.<br> Which I will update and change pretty often.</h3> <br>
+                    <h3>This is my portfolio page.<br>
+                        <i>Which I will update and change pretty often.</i> </h3>
+                     <br>
                     <p>Contact me using the form to the left or take a tour on the page. <br>
                         <strong>Or play the game at project 1.</strong>
                     </p>
@@ -81,24 +86,38 @@
                         as a .NET developer, graduating june 2022.<br>
                         <br>
                         I have experience in: <br>
-                        <li>C#</li>
-                        <li>T-SQL</li>
-                        <li>CSS</li>
-                        <li>HTML5</li>
-                        <li>JavaScript</li>
-                        <li>Go</li>
-                        <li>.NET</li>
-                        <li>Entity framework Core</li>
+                    <div class="flex-container">
+                        <div>
+                            <li>C#</li>
+                            <li>T-SQL</li>
+                            <li>CSS</li>
+                            <li>HTML5</li>
+                            <li>JavaScript</li>
+                            <li>Go</li>
+                        </div>
+                        <div>
+                            <li>.NET</li>
+                            <li>Entity framework Core</li>
+                            <li>Agile methods</li>
+                            <li>Pair programming</li>
+                            <li>Git & Github</li>
+                        </div>
+                        <div>
+                            <li>..</li>
+                            <li>And more</li>
+                            <li>coming up</li>
+                        </div>
+                        </div>
+                        <h4>Can I put my experience to use in the world of code?</h4>
+                        I've always been interested in computers and games. At 2016 I was introduced to the world of
+                        programming by my brother-in-law which was studying at the time computer engineering in
+                        Stockholm.
+                        The lessons I've learned throghout this journey in the armed forces is that<br>
+                        <strong> always have a <i>plan b</i></strong> thought out.<br>
+                        Which has helped me in numerous ways both in school and otherwise.<br>
 
-                    <h4>Can I put my experience to use in the world of code?</h4>
-                    I've always been interested in computers and games. At 2016 I was introduced to the world of
-                    programming by my brother-in-law which was studying at the time computer engineering in Stockholm.
-                    The lessons I've learned throghout this journey in the armed forces is that<br>
-                    <strong> always have a <i>plan b</i></strong> thought out.<br>
-                    Which has helped me in numerous ways both in school and otherwise.<br>
-
-                    </p>
-                    <img src="img/IMG_8527 (2).jpg" width="60%">
+                        </p>
+                        <img src="img/IMG_8527 (2).jpg" width="60%">
                 </article>
             </section>
             <section id="project1">
@@ -107,9 +126,10 @@
                     <p>Using pure JavaScript
                     <h3>This is a 2D breakout game.</h3>
                     How to play: <br>
-                    You move the paddel with your mouse or with the right or left arrow.
+                    You move the paddle with your mouse or with the right or left arrow.
                     <br>
-                    <h4>You have 2 lives. Good luck!</h4>
+                    <h4>You have 2 lives at easy. 1 life at medium & hard.</h4>
+                    <h3>Good luck!</h3>
                     <br>
                     <!-- TODO: Problem med spelet när jag hade fönstret på halva datornskärmen,
                          plattan ville inte gå hela vägen ut till höger om jag hade fönstret på vänster halva av skärmen -->
@@ -168,15 +188,25 @@
         </main>
 
         <footer>
+            <article id="summary">
+                <h3>Tech skills</h3>
+                <div>
+                    <p>C#, T-SQL, CSS, Flexbox, HTML5, JavaScript, ES6, Go, .NET, Entity Framework Core, OOP,
+                        Agile methods, pair-programming, Git & GitHub and more coming up.. </p>
+                </div>
+            </article>
             <article id="contact">
                 <h3>Contact me</h3>
                 <div>
-                    <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
+                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
+                    <a href="https://github.com/andreaslind31"><img src="img/GitHub_Logo.png" width="100px"></a>
                 </div>
                 <br>
                 <div>
-                    <a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a>
+                    <img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span>
                 </div>
+
+
             </article>
         </footer>
     </div>

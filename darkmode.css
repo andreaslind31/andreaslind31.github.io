@@ -16,7 +16,7 @@ body {
 .header-bg__heading {
     line-height: 49px;
     position: absolute;
-    height: 520px;
+    height: 100px;
     width: 300px;
     left: 18%;
     top: 45px;
@@ -102,6 +102,16 @@ section img{
     border: rgb(146, 146, 140);
     border-radius: 5%;
 }
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#project1 div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+}
 #project2{
     background-color: rgb(146, 146, 140);
     border: rgb(146, 146, 140);
@@ -131,6 +141,9 @@ footer article {
     height: 150px;
     border: lightslategray;
     border-radius: 5%;
+}
+#summary{
+    margin-right: 20px;
 }
 #contact div{
     display: flex;

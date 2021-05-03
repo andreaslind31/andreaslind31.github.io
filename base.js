@@ -9,7 +9,11 @@ let justInterested = searchParams.get("checkbox2");
 
 document.getElementById("button").addEventListener("click", startForm);
 document.getElementById("darkmode").addEventListener("click", darkMode);
+document.getElementById("lightmode").addEventListener("click", lightMode);
 
+function lightMode() {
+    changeToLightmode()
+}
 function darkMode() {
     changeToDarkmode()
 }
@@ -104,6 +108,17 @@ function changeToDarkmode() {
         }
     };
     xhttp.open("GET", "txtfiles/darkmode.txt", true);
+    xhttp.send();
+
+}
+function changeToLightmode() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("styles").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "txtfiles/lightmode.txt", true);
     xhttp.send();
 
 }
