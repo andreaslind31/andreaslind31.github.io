@@ -15,7 +15,7 @@ body {
 .header-bg__heading {
     line-height: 49px;
     position: absolute;
-    height: 520px;
+    height: 100px;
     width: 300px;
     left: 18%;
     top: 45px;
@@ -65,25 +65,16 @@ nav button{
     border:  rgb(216, 216, 211);
     border-radius: 2%;
 }
-#leftmenu h3{
+#leftmenu div{
 margin-left: 5%;
 }
-#leftmenu h4{
-    margin-left: 5%;
-    }
-#leftmenu span{
-    margin-left: 3%;
-}
 #leftmenu input{
-    margin-left: 3%;
     margin-bottom: 1%;
 }
 #leftmenu label{
-    margin-left: 3%;
     margin-bottom: 30%;
 }
 #button{
-    margin-left: 3%;
     margin-top: 10%;
     width: 40%;
 }
@@ -101,6 +92,11 @@ margin-left: 5%;
 }
 section img{
     margin-bottom: 10%;
+}
+#project1 div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
 }
 #aboutme{
     background-color: rgb(216, 216, 211);

@@ -3,9 +3,13 @@ let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 let x = canvas.width / 2;
 let y = canvas.height - 30;
-let dx = 2;
-let dy = -2;
-let ballRadius = 10;
+let dx = 3;
+let dy = -3;
+let dxMedium = 4;
+let dyMedium = -4;
+let dxHard = 6;
+let dyHard = -6;
+let ballRadius = 8;
 let paddleHeight = 10;
 let paddleWidth = 75;
 let paddleX = (canvas.width - paddleWidth) / 2;
@@ -19,7 +23,8 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 let score = 0;
-let lives = 2;
+let twoLives = 2;
+let oneLife = 1;
 let bricks = [];
 for (var c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
@@ -28,22 +33,32 @@ for (var c = 0; c < brickColumnCount; c++) {
     }
 }
 
-document.getElementById("startButton").addEventListener("click", startGame);
+document.getElementById("startEasy").addEventListener("click", startEasy);
+document.getElementById("startMedium").addEventListener("click", startMedium);
+document.getElementById("startHard").addEventListener("click", startHard);
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
-function startGame() {
-    draw();
-  }
+function startEasy() {
+    drawEasy();
+}
+function startMedium() {//MEDIUM funkar inte som den ska när det refreshas
+    
+    drawMedium();
+}
+function startHard() {//HARD funkar inte som den ska när det refreshas
+    
+    drawHard();
+}
 function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Score: " + score, 8, 20);
 }
-function drawLives() {
+function drawLives(lives) {
     ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "red";
     ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
 }
 function drawBricks() {
@@ -70,13 +85,13 @@ function drawBall() {
     ctx.fill();
     ctx.closePath();
 }
-function draw() {
+function drawEasy() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall();
     drawPaddle();
     drawScore();
-    drawLives();
+    drawLives(twoLives);
     collisionDetection();
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
@@ -88,16 +103,16 @@ function draw() {
             dy = -dy;
         }
         else {
-            lives--;
-            if (!lives) {
-                alert("GAME OVER. You got: " + score + " points");
+            twoLives--;
+            if (!twoLives) {
+                alert("GAME OVER at easy difficulty. You got: " + score + " points");
                 document.location.reload();
             }
             else {
                 x = canvas.width / 2;
                 y = canvas.height - 30;
-                dx = 2;
-                dy = -2;
+                dx = 3;
+                dy = -3;
                 paddleX = (canvas.width - paddleWidth) / 2;
             }
         }
@@ -116,7 +131,105 @@ function draw() {
             paddleX = 0;
         }
     }
-    requestAnimationFrame(draw);
+    requestAnimationFrame(drawEasy);
+}
+function drawMedium() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBricks();
+    drawBall();
+    drawPaddle();
+    drawScore();
+    drawLives(oneLife);
+    collisionDetectionMedium();
+    ballRadius = 7;
+    if (x + dxMedium > canvas.width - ballRadius || x + dxMedium < ballRadius) {
+        dxMedium = -dxMedium;
+    }
+    if (y + dyMedium < ballRadius) {
+        dyMedium = -dyMedium;
+    } else if (y + dyMedium > canvas.height - ballRadius) {
+        if (x > paddleX && x < paddleX + paddleWidth) {
+            dyMedium = -dyMedium;
+        }
+        else {
+            oneLife--;
+            if (!oneLife) {
+                alert("GAME OVER at medium difficulty. You got: " + score + " points");
+                document.location.reload();
+            }
+            else {
+                x = canvas.width / 2;
+                y = canvas.height - 30;
+                dxMedium = 4;
+                dyMedium = -4;
+                paddleX = (canvas.width - paddleWidth) / 2;
+            }
+        }
+    }
+    x += dxMedium;
+    y += dyMedium;
+    if (rightPressed) {
+        paddleX += 7;
+        if (paddleX + paddleWidth > canvas.width) {
+            paddleX = canvas.width - paddleWidth;
+        }
+    }
+    else if (leftPressed) {
+        paddleX -= 7;
+        if (paddleX < 0) {
+            paddleX = 0;
+        }
+    }
+    requestAnimationFrame(drawMedium);
+}
+function drawHard() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBricks();
+    drawBall();
+    drawPaddle();
+    drawScore();
+    drawLives(oneLife);
+    collisionDetectionHard();
+    ballRadius = 6;
+    if (x + dxHard > canvas.width - ballRadius || x + dxHard < ballRadius) {
+        dxHard = -dxHard;
+    }
+    if (y + dyHard < ballRadius) {
+        dyHard = -dyHard;
+    } else if (y + dyHard > canvas.height - ballRadius) {
+        if (x > paddleX && x < paddleX + paddleWidth) {
+            dyHard = -dyHard;
+        }
+        else {
+            oneLife--;
+            if (!oneLife) {
+                alert("GAME OVER at hard difficulty. You got: " + score + " points");
+                document.location.reload();
+            }
+            else {
+                x = canvas.width / 2;
+                y = canvas.height - 30;
+                dxHard = 6;
+                dyHard = -6;
+                paddleX = (canvas.width - paddleWidth) / 2;
+            }
+        }
+    }
+    x += dxHard;
+    y += dyHard;
+    if (rightPressed) {
+        paddleX += 7;
+        if (paddleX + paddleWidth > canvas.width) {
+            paddleX = canvas.width - paddleWidth;
+        }
+    }
+    else if (leftPressed) {
+        paddleX -= 7;
+        if (paddleX < 0) {
+            paddleX = 0;
+        }
+    }
+    requestAnimationFrame(drawHard);
 }
 function drawPaddle() {
     ctx.beginPath();
@@ -156,8 +269,47 @@ function collisionDetection() {
                     dy = -dy;
                     b.status = 0;
                     score++;
+                    paddleWidth = paddleWidth - 1;
                     if (score == brickRowCount * brickColumnCount) {
-                        alert("YOU WIN, CONGRATULATIONS! You got: " + score + "points");
+                        alert("You won! Congrats! Try the more difficult versions. You got: " + score + "points at easy");
+                        document.location.reload();
+                    }
+                }
+            }
+        }
+    }
+}
+function collisionDetectionMedium() {
+    for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+            let b = bricks[c][r];
+            if (b.status == 1) {
+                if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                    dyMedium = -dyMedium;
+                    b.status = 0;
+                    score++;
+                    paddleWidth = paddleWidth - 3;
+                    if (score == brickRowCount * brickColumnCount) {
+                        alert("YOU WIN, CONGRATULATIONS! Next up: hard. You got: " + score + "points at medium");
+                        document.location.reload();
+                    }
+                }
+            }
+        }
+    }
+}
+function collisionDetectionHard() {
+    for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+            let b = bricks[c][r];
+            if (b.status == 1) {
+                if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                    dyHard = -dyHard;
+                    b.status = 0;
+                    score++;
+                    paddleWidth = paddleWidth - 3;
+                    if (score == brickRowCount * brickColumnCount) {
+                        alert("DAAAMN You got some skills! CONGRATULATIONS! You got: " + score + "points at hard");
                         document.location.reload();
                     }
                 }
