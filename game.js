@@ -26,29 +26,75 @@ let score = 0;
 let twoLives = 2;
 let oneLife = 1;
 let bricks = [];
+let attached = false;
 for (var c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
     for (var r = 0; r < brickRowCount; r++) {
         bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
-
+const element = document.getElementById("darkmode");
 document.getElementById("startEasy").addEventListener("click", startEasy);
 document.getElementById("startMedium").addEventListener("click", startMedium);
 document.getElementById("startHard").addEventListener("click", startHard);
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
+document.getElementById("darkmode").addEventListener("click", darkMode);
+document.getElementById("lightmode").addEventListener("click", lightMode);
 
+function lightMode() {
+    changeToLightmode()
+}
+function darkMode() {
+    changeToDarkmode()
+}
+function changeToDarkmode() {
+    attached = true;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("styles").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "txtfiles/darkmode.txt", true);
+    xhttp.send();
+
+}
+function changeToLightmode() {
+    attached = false;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("styles").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "txtfiles/lightmode.txt", true);
+    xhttp.send();
+
+}
+window.onload = function()
+{
+ var txtbox = document.getElementById("darkmode");
+
+ if (window.addEventListener)
+ {
+  txtbox.addEventListener('change', changeToDarkmode, false);
+ }
+ else if(window.attachEvent)
+ {
+  txtbox.attachEvent('onchange', changeToDarkmode);
+ }
+}
 function startEasy() {
     drawEasy();
 }
-function startMedium() {//MEDIUM funkar inte som den ska när det refreshas
-    
+function startMedium() {
+
     drawMedium();
 }
-function startHard() {//HARD funkar inte som den ska när det refreshas
-    
+function startHard() {
+
     drawHard();
 }
 function drawScore() {
@@ -107,6 +153,13 @@ function drawEasy() {
             if (!twoLives) {
                 alert("GAME OVER at easy difficulty. You got: " + score + " points");
                 document.location.reload();
+                if (element.getAttribute('listener') !== 'true') {
+                    element.addEventListener('click', function (e) {
+                        const elementClicked = e.target;
+                        elementClicked.setAttribute('listener', 'true');
+                        changeToDarkmode();
+                    });
+                }
             }
             else {
                 x = canvas.width / 2;
@@ -133,6 +186,7 @@ function drawEasy() {
     }
     requestAnimationFrame(drawEasy);
 }
+
 function drawMedium() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
@@ -156,6 +210,9 @@ function drawMedium() {
             if (!oneLife) {
                 alert("GAME OVER at medium difficulty. You got: " + score + " points");
                 document.location.reload();
+                if (document.getElementById("darkmode").addEventListener("click", darkMode) == true) {
+                    changeToDarkmode()
+                }
             }
             else {
                 x = canvas.width / 2;
@@ -271,8 +328,15 @@ function collisionDetection() {
                     score++;
                     paddleWidth = paddleWidth - 2;
                     if (score == brickRowCount * brickColumnCount) {
-                        alert("You won! Congrats! Try the more difficult versions. You got: " + score + "points at easy");
+                        alert("You won! Congrats! Try the more difficult versions. You got: " + score + " points at easy");
                         document.location.reload();
+                        if (element.getAttribute('listener') !== 'true') {
+                            element.addEventListener('click', function (e) {
+                                const elementClicked = e.target;
+                                elementClicked.setAttribute('listener', 'true');
+                            });
+                            changeToDarkmode();
+                        }
                     }
                 }
             }
@@ -290,8 +354,15 @@ function collisionDetectionMedium() {
                     score++;
                     paddleWidth = paddleWidth - 3;
                     if (score == brickRowCount * brickColumnCount) {
-                        alert("YOU WIN, CONGRATULATIONS! Next up: hard. You got: " + score + "points at medium");
+                        alert("YOU WON, CONGRATULATIONS! Next up: hard. You got: " + score + " points at medium");
                         document.location.reload();
+                        if (element.getAttribute('listener') !== 'true') {
+                            element.addEventListener('click', function (e) {
+                                const elementClicked = e.target;
+                                elementClicked.setAttribute('listener', 'true');
+                                changeToDarkmode();
+                            });
+                        }
                     }
                 }
             }
@@ -309,8 +380,15 @@ function collisionDetectionHard() {
                     score++;
                     paddleWidth = paddleWidth - 3;
                     if (score == brickRowCount * brickColumnCount) {
-                        alert("DAAAMN You got some skills! CONGRATULATIONS! You got: " + score + "points at hard");
+                        alert("HOOOLY SHIT!! You got some skills! CONGRATULATIONS! You got: " + score + " points at hard");
                         document.location.reload();
+                        if (element.getAttribute('listener') !== 'true') {
+                            element.addEventListener('click', function (e) {
+                                const elementClicked = e.target;
+                                elementClicked.setAttribute('listener', 'true');
+                                changeToDarkmode();
+                            });
+                        }
                     }
                 }
             }
