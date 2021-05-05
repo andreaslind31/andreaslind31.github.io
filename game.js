@@ -35,7 +35,6 @@ for (var c = 0; c < brickColumnCount; c++) {
 let attached = false;
 //bool gällande om darkmode är aktiv. TODO: ändras automatiskt till light mode vid spelets slut som det är nu.
 
-const element = document.getElementById("darkmode");
 document.getElementById("startEasy").addEventListener("click", startEasy);
 document.getElementById("startMedium").addEventListener("click", startMedium);
 document.getElementById("startHard").addEventListener("click", startHard);
@@ -45,50 +44,21 @@ document.addEventListener("mousemove", mouseMoveHandler, false);
 document.getElementById("darkmode").addEventListener("click", darkMode);
 document.getElementById("lightmode").addEventListener("click", lightMode);
 
-window.onload = function()
-{
- var txtbox = document.getElementById("darkmode");
+// window.onload = function()
+// {
+//  var txtbox = document.getElementById("darkmode");
 
- if (window.addEventListener)
- {
-  txtbox.addEventListener('change', changeToDarkmode, false);
- }
- else if(window.attachEvent)
- {
-  txtbox.attachEvent('onchange', changeToDarkmode);
- }
-}
+//  if (window.addEventListener)
+//  {
+//   txtbox.addEventListener('change', changeToDarkmode, false);
+//  }
+//  else if(window.attachEvent)
+//  {
+//   txtbox.attachEvent('onchange', changeToDarkmode);
+//  }
+// }
 
-function lightMode() {
-    changeToLightmode()
-}
-function darkMode() {
-    changeToDarkmode()
-}
-function changeToDarkmode() {
-    attached = true;
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("styles").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "txtfiles/darkmode.txt", true);
-    xhttp.send();
 
-}
-function changeToLightmode() {
-    attached = false;
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("styles").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "txtfiles/lightmode.txt", true);
-    xhttp.send();
-
-}
 function startEasy() {
     drawEasy();
 }

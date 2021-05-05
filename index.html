@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="style.css">
     </div>
     <title>Andreas Lind - portfolio</title>
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
     <script src="base.js">
     </script>
 </head>
@@ -32,8 +30,8 @@
                 <a href="#project2">PROJECT 2</a>
                 <a href="#project3">PROJECT 3</a>
                 <a href="#contact">CONTACT</a>
-                <button id="darkmode" type="button" onclick="changeToDarkmode()">Dark mode</button>
-                <button id="lightmode" type="button" onclick="changeToLightmode()">Light mode</button>
+                <button id="darkmode" onclick="darkMode()">Dark mode</button>
+                <button id="lightmode" onclick="lightMode()">Light mode</button>
                 <!-- <button type="button" onclick="changeToSwedish()">Svenska</button>
                 <button type="button" onclick="changeToEnglish()">English</button> -->
             </nav>
@@ -52,7 +50,7 @@
                     <br>
                     <label for="checkbox5"> Just interested</label>
                     <input id="checkbox5" type="checkbox" name="checkbox2" value="Just interested" checked>
-                    <button id="button">Send Email</button>
+                    <button id="button" type="button" onclick="startForm()">Send Email</button>
                 </form>
                 <br>
                 <p><i>or contact me using these:</i></p>
@@ -68,8 +66,9 @@
                     </h3>
                     <p>
                     <h3>This is my portfolio page.<br>
-                        <i>Which I will update and change pretty often.</i> </h3>
-                     <br>
+                        <i>Which I will update and change pretty often.</i>
+                    </h3>
+                    <br>
                     <p>Contact me using the form to the left or take a tour on the page. <br>
                         <strong>Or play the game at project 1.</strong>
                     </p>
@@ -107,17 +106,17 @@
                             <li>And more</li>
                             <li>coming up</li>
                         </div>
-                        </div>
-                        <h4>Can I put my experience to use in the world of code?</h4>
-                        I've always been interested in computers and games. At 2016 I was introduced to the world of
-                        programming by my brother-in-law which was studying at the time computer engineering in
-                        Stockholm.
-                        The lessons I've learned throghout this journey in the armed forces is that<br>
-                        <strong> always have a <i>plan b</i></strong> thought out.<br>
-                        Which has helped me in numerous ways both in school and otherwise.<br>
+                    </div>
+                    <h4>Can I put my experience to use in the world of code?</h4>
+                    I've always been interested in computers and games. At 2016 I was introduced to the world of
+                    programming by my brother-in-law which was studying at the time computer engineering in
+                    Stockholm.
+                    The lessons I've learned throghout this journey in the armed forces is that<br>
+                    <strong> always have a <i>plan b</i></strong> thought out.<br>
+                    Which has helped me in numerous ways both in school and otherwise.<br>
 
-                        </p>
-                        <img src="img/IMG_8527 (2).jpg" width="60%">
+                    </p>
+                    <img src="img/IMG_8527 (2).jpg" width="60%">
                 </article>
             </section>
             <section id="project1">
@@ -211,8 +210,12 @@
             </article>
         </footer>
     </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    
     <script src="game.js">
     </script>
+
 </body>
 
 </html>

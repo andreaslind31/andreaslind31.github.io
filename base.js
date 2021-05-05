@@ -8,18 +8,40 @@ let company = searchParams.get("checkbox1");
 let justInterested = searchParams.get("checkbox2");
 
 document.getElementById("button").addEventListener("click", startForm);
+document.getElementById("darkmodeBtn").addEventListener("click", darkMode);
+document.getElementById("lightmodeBtn").addEventListener("click", lightMode);
 
+function lightMode() {
+    changeToLightmode()
+}
+function darkMode() {
+    changeToDarkmode()
+}
+function changeToDarkmode() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("styles").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "txtfiles/darkmode.txt", true);
+    xhttp.send();
+    attached = true;
+}
+function changeToLightmode() {
+    
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("styles").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "txtfiles/lightmode.txt", true);
+    xhttp.send();
+    attached = false;
+}
 function startForm(){
     validateForm()
-}
-function showMessage(message) {
-    document.getElementById("input").textContent = message;
-}
-function showHobby(message) {
-    document.getElementById("hobby").textContent = message;
-}
-function showMail(message) {
-    document.getElementById("mail").textContent = message;
 }
 function sendEmail() {
     let subject = document.forms["myForm"]["mail"].value + ": " + document.forms["myForm"]["checkbox1"].value;
@@ -70,33 +92,7 @@ function validateForm() {
         return true;
     }
 }
-function changeToSwedish() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("home").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "txtfiles/project1Swedish.txt", true);
-    xhttp.send();
-
-}
-function changeToEnglish() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("home").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "txtfiles/project1English.txt", true);
-    xhttp.send();
-
-}
-
 console.log(currentAddress);
-console.log(currentURL);
-console.log(currentURL.search);
-
 console.log("Name: ", fname);
 console.log("Mail: ", mail);
 console.log("Body:", );
