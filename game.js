@@ -26,13 +26,15 @@ let score = 0;
 let twoLives = 2;
 let oneLife = 1;
 let bricks = [];
-let attached = false;
 for (var c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
     for (var r = 0; r < brickRowCount; r++) {
         bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
+let attached = false;
+//bool gällande om darkmode är aktiv. TODO: ändras automatiskt till light mode vid spelets slut som det är nu.
+
 const element = document.getElementById("darkmode");
 document.getElementById("startEasy").addEventListener("click", startEasy);
 document.getElementById("startMedium").addEventListener("click", startMedium);
@@ -42,6 +44,20 @@ document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 document.getElementById("darkmode").addEventListener("click", darkMode);
 document.getElementById("lightmode").addEventListener("click", lightMode);
+
+window.onload = function()
+{
+ var txtbox = document.getElementById("darkmode");
+
+ if (window.addEventListener)
+ {
+  txtbox.addEventListener('change', changeToDarkmode, false);
+ }
+ else if(window.attachEvent)
+ {
+  txtbox.attachEvent('onchange', changeToDarkmode);
+ }
+}
 
 function lightMode() {
     changeToLightmode()
@@ -72,19 +88,6 @@ function changeToLightmode() {
     xhttp.open("GET", "txtfiles/lightmode.txt", true);
     xhttp.send();
 
-}
-window.onload = function()
-{
- var txtbox = document.getElementById("darkmode");
-
- if (window.addEventListener)
- {
-  txtbox.addEventListener('change', changeToDarkmode, false);
- }
- else if(window.attachEvent)
- {
-  txtbox.attachEvent('onchange', changeToDarkmode);
- }
 }
 function startEasy() {
     drawEasy();
@@ -186,7 +189,6 @@ function drawEasy() {
     }
     requestAnimationFrame(drawEasy);
 }
-
 function drawMedium() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
