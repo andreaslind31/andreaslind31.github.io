@@ -11,45 +11,16 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Select size of photos (in pixels) you want them to be displayed</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" id="sq">Square [75X75]</button>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" id="lg-sq">Large Square [150X150]</button>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" id="thumb">Thumbnail</button>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" id="small">Small</button>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" id="mid">Medium</button>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" id="ori">Original</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Hit This button to fetch photos</h2>
-                <button type="button" class="btn btn-success" id="button">Fetch Recent Photos</button>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="results"></div>
-            </div>
-        </div>
-    </div>
+    <form id="myForm" method="GET">
+        Search: <input type="text" id="input" name="input">
+    </form>
+    <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
+    <button id="btnClear" type="button" onclick="clearForm()">Clear</button>
+    <h2>
+        <div id="galleryTitle"></div>
+    </h2>
+    <div style="clear:both;"></div>
+    <div id="flickr"></div>
 </body>
 
 </html>
