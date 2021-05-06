@@ -16,13 +16,11 @@
 <body>
     <div id="home">
         <header>
-            <!-- <img src="img/IMG_2530.jpg"> -->
             <div class="header-bg"></div>
             <div class="header-bg__heading" tabindex="0">
                 <h1 class="header-bg__heading-name">
                     PORTFOLIO: <b>Andreas Lind</b>
                 </h1>
-                <!-- <h1 class="header-bg__heading-title">.NET developer</h1> -->
             </div>
             <nav>
                 <a href="#aboutme">ABOUT ME</a>
@@ -30,10 +28,9 @@
                 <a href="#project2">PROJECT 2</a>
                 <a href="#project3">PROJECT 3</a>
                 <a href="#contact">CONTACT</a>
-                <button id="darkmode" onclick="darkMode()">Dark mode</button>
-                <button id="lightmode" onclick="lightMode()">Light mode</button>
-                <!-- <button type="button" onclick="changeToSwedish()">Svenska</button>
-                <button type="button" onclick="changeToEnglish()">English</button> -->
+                <button id="darkmode">Dark mode</button>
+                <button id="lightmode">Light mode</button>
+                <!-- TODO: lägg in att om man har dark mode aktiverat skall den stanna där vid slut av spelet -->
             </nav>
         </header>
         <aside id="leftmenu">
@@ -122,7 +119,7 @@
             <section id="project1">
                 <article>
                     <h2>A game: What game? My game</h2>
-                    <p>Using pure JavaScript
+                    <p>Using pure JavaScript and some CSS
                     <h3>This is a 2D breakout game.</h3>
                     How to play: <br>
                     You move the paddle with your mouse or with the right or left arrow.<br>
@@ -137,7 +134,7 @@
                         <button id="startEasy">Easy</button>
                         <button id="startMedium">Medium</button>
                         <button id="startHard">Hard</button>
-                        <button id="stop" hidden>STOP</button>
+                        <!-- <button id="stop" hidden>STOP</button> TODO: implementera denna framöver-->
                     </div>
                     <canvas id='myCanvas' width="480" height="320">
                     </canvas>
@@ -212,7 +209,6 @@
     </div>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    
     <script src="game.js">
     </script>
 

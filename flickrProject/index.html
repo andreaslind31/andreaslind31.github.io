@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="base.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Select size of photos (in pixels) you want them to be displayed</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="sq">Square [75X75]</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="lg-sq">Large Square [150X150]</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="thumb">Thumbnail</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="small">Small</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="mid">Medium</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="ori">Original</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Hit This button to fetch photos</h2>
+                <button type="button" class="btn btn-success" id="button">Fetch Recent Photos</button>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
