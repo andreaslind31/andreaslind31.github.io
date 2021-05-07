@@ -19,8 +19,27 @@
     <h2>
         <div id="galleryTitle"></div>
     </h2>
-    <div style="clear:both;"></div>
-    <div id="flickr"></div>
+    <div class="row">
+        <div class="column">
+            <div id="flickr"></div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- <span class="close cursor" onclick="closeModal()">&times;</span> -->
+        <div class="modal-content">
+
+            <div id="mySlides" class="mySlides">
+            </div>
+            
+            <button id="prev" class="prev" onclick="addPage()">&#10094;</button>
+            <button id="next" class="next" onclick="decPage()">&#10095;</button>    
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+        </div>
+    </div>
+    
+
 </body>
 
 </html>
