@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="base.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,30 +16,33 @@
     </form>
     <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
     <button id="btnClear" type="button" onclick="clearForm()">Clear</button>
-    <h2>
-        <div id="galleryTitle"></div>
-    </h2>
+    <h2>A gallery</h2>
     <div class="row">
         <div class="column">
-            <div id="flickr"></div>
+            <div id="flickr">
+                <!-- inserts from js rows here -->
+            </div>
         </div>
     </div>
     <div id="myModal" class="modal">
-        <!-- <span class="close cursor" onclick="closeModal()">&times;</span> -->
+        <span class="close cursor" onclick="closeModal()">&times;</span>
         <div class="modal-content">
 
             <div id="mySlides" class="mySlides">
+                <!-- inserts from js rows here -->
             </div>
-            
-            <button id="prev" class="prev" onclick="addPage()">&#10094;</button>
-            <button id="next" class="next" onclick="decPage()">&#10095;</button>    
+            <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
             <div class="caption-container">
                 <p id="caption"></p>
             </div>
+            <div id="demo" class="column">
+                <!-- inserts from js rows here -->
+            </div>
         </div>
     </div>
-    
 
+    <script src="base.js"></script>
 </body>
 
 </html>
