@@ -11,38 +11,50 @@
 </head>
 
 <body>
-    <form id="myForm" method="GET">
-        Search: <input type="text" id="input" name="input">
-    </form>
-    <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
-    <button id="btnClear" type="button" onclick="clearForm()">Clear</button>
-    <h2>A gallery</h2>
-    <div class="row">
-        <div class="column">
-            <div id="flickr">
-                <!-- inserts from js rows here -->
+    <div id="home">
+        <header>
+            <nav>
+                <a href="https://andreaslind31.github.io/">HOME</a>
+                <p>|</p>
+                <a href="https://andreaslind31.github.io/#contact">CONTACT</a>
+                <!-- <button id="darkmode">Dark mode</button>
+                <button id="lightmode">Light mode</button> -->
+            </nav>
+        </header>
+        <h2>A gallery of your choice</h2>
+        <p>Pictures from flickr</p><br>
+        <form id="myForm" method="GET">
+            <input type="text" id="input" name="input" placeholder="Search here">
+        </form>
+        <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
+        <button id="btnClear" type="button" onclick="clearForm()">Clear</button>
+        <div class="row">
+            <div class="column">
+                <div id="flickr">
+                    <!-- inserts from js rows here -->
+                </div>
             </div>
         </div>
-    </div>
-    <div id="myModal" class="modal">
-        <span class="close cursor" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
 
-            <div id="mySlides" class="mySlides">
-                <!-- inserts from js rows here -->
-            </div>
-            <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
-            <div class="caption-container">
-                <p id="caption"></p>
-            </div>
-            <div id="demo" class="column">
-                <!-- inserts from js rows here -->
+                <div id="mySlides" class="mySlides">
+                    <!-- inserts from js rows here -->
+                </div>
+                <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+                <div id="demo" class="column">
+                    <!-- inserts from js rows here -->
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="base.js"></script>
+        <script src="base.js"></script>
+    </div>
 </body>
 
 </html>

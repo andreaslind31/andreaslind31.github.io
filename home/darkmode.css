@@ -1,7 +1,8 @@
 body {
-    background-color:rgb(243, 243, 243);
+    background-color:rgb(71, 69, 69);
     margin: 5px 10px 5px 10px;
     padding: 0;
+    color:rgb(243, 243, 243);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .header-bg {
@@ -17,7 +18,7 @@ body {
     position: absolute;
     height: 100px;
     width: 300px;
-    left: 18%;
+    left: 26%;
     top: 45px;
     display: flex;
     flex-direction: column;
@@ -34,21 +35,24 @@ body {
      margin-left: auto;
      margin-right: auto;
 }
+
 header nav {
-    background-color:lightgray;
+    background-color:rgb(65, 64, 64);
     height: 40px;
     display: flex;
     justify-content: space-evenly;
-    align-items:center;   
+    align-items:center;
+    
+    
 }
 nav a {
     text-decoration: none;
-    color: #444;
+    color: rgb(243, 243, 243);
     transition: all .2s ease;
     
 }
 nav a:hover {
-    color: black;
+    color:whitesmoke;
     font-weight: 400;
 }
 nav button{
@@ -56,17 +60,17 @@ nav button{
 }
 
 #leftmenu {
-    background-color: rgb(216, 216, 211);
+    background-color: rgb(146, 146, 140);
     float: left;
     width: 25%;
     margin-top: 40px;
     margin-bottom: 20px;
     height:600px;
-    border:  rgb(216, 216, 211);
+    border:  rgb(146, 146, 140);
     border-radius: 2%;
 }
 #leftmenu div{
-margin-left: 5%;
+ margin-left: 5%;
 }
 #leftmenu input{
     margin-bottom: 1%;
@@ -93,10 +97,9 @@ margin-left: 5%;
 section img{
     margin-bottom: 10%;
 }
-
 #aboutme{
-    background-color: rgb(216, 216, 211);
-    border: rgb(216, 216, 211);
+    background-color: rgb(146, 146, 140);
+    border: rgb(146, 146, 140);
     border-radius: 5%;
 }
 .flex-container{
@@ -110,8 +113,8 @@ section img{
     margin-bottom: 2%;
 }
 #project2{
-    background-color: rgb(216, 216, 211);
-    border: rgb(216, 216, 211);
+    background-color: rgb(146, 146, 140);
+    border: rgb(146, 146, 140);
     border-radius: 5%;
 }
 input {
@@ -133,9 +136,10 @@ footer article {
     padding: 15px;
     margin-bottom: 30px;
     background-color: white;
+    color:rgb(65, 64, 64);
     width: auto;
     height: 150px;
-    border: rgb(82, 54, 12);
+    border: lightslategray;
     border-radius: 5%;
 }
 #summary{
@@ -150,7 +154,7 @@ footer article {
     margin-left: 15px;
 }
 canvas{
-     background: rgb(202, 199, 199);
-     display: block; 
-     margin: 0 auto; 
+    background: rgb(202, 199, 199);
+    display: block; 
+    margin: 0 auto; 
 }
