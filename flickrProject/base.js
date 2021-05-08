@@ -17,6 +17,7 @@ document.getElementById("next").addEventListener("click", function () {
   plusSlides(1)
 })
 
+
 function getPhotos() {
   let searchFor = document.forms["myForm"]["input"].value;
   let settings = {
@@ -43,32 +44,35 @@ function getPhotos() {
       console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
 
       //  https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-      $("#flickr").append('<div class="column">'); 
-      $("#flickr").append('<img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="openModal();currentSlide('+slideIndex+')" class="hover-shadow">');
-      $("#flickr").append('</div>');
-      $("#mySlides").append('<div class="mySlides">');
-      $("#mySlides").append('<div class="numbertext">' + slideIndex + ' / 20</div>');
-      $("#mySlides").append('<img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%">');
-      $("#mySlides").append('</div>');
-      $("#demo").append('<div class="column">');
-      $("#demo").append('<img class="demo cursor" src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="currentSlide('+slideIndex+')">');
-      $("#demo").append('</div">');
+      $("#row").append('<div class="column"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="openModal();currentSlide(' + slideIndex + ')" class="hover-shadow"></div>');
+      $(".modal-content").append('<div id="slides" class="mySlides"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%"></div>');
+      $("#demo").append('<div id="secondCol" class="column"><img class="demo cursor" src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="currentSlide(' + slideIndex + ')"></div>');
       slideIndex++;
     });
+    createAside();
+    createFooter();
   });
-}
 
-// Open the Modal
+}
+function createAside() {
+  $("#sectionAside").append('<aside id="leftmenu"></aside>');
+  $("#leftmenu").append('<div><h3>Interested?</h3><a href="#contact"><h4>Contact me!</h4></a></div>');                         
+}
+function createFooter() {
+  $("#sectionFooter").append('<footer id="footer"></footer>');
+  $("#footer").append('<article id="summary"></article>');
+  $("#summary").append('<h3>Summary</h3>');
+  $("#summary").append('<div><p>This page was done using HTML5, CSS, JavaScript with flickrs API.<br> Methods used: <i>search, getRecent.</i></p></div>');
+  $("#footer").append('<article id="contact"><h3>Contact me</h3></article>');
+  $("#contact").append('<div><a href="https://www.linkedin.com/in/andreas-lind31/"><img src="img/LI-In-Bug.png"></a><a href="https://github.com/andreaslind31"><img src="img/GitHub_Logo.png" width="100px"></a></div>');
+  $("#contact").append('<br><div><img src="img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span></div>');
+}
 function openModal() {
   document.getElementById("myModal").style.display = "block";
 }
-// Close the Modal
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
-
-
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -76,7 +80,6 @@ function plusSlides(n) {
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
-
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -96,3 +99,4 @@ function showSlides(n) {
 }
 
 showSlides(slideIndex);
+

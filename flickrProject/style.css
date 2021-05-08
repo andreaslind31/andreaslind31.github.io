@@ -1,19 +1,85 @@
-.row > .column {
+* {
+    box-sizing: border-box;
+  }
+body {
+    background-color:rgb(243, 243, 243);
+    margin: 5px 10px 5px 10px;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#home{
+    width: 1000px;
+     margin-left: auto;
+     margin-right: auto;
+}
+header nav {
+    background-color:lightgray;
+    height: 40px;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;   
+}
+a {
+    margin-left: 5%;
+    text-decoration: none;
+    color: #444;
+    transition: all .2s ease;
+    
+}
+a:hover {
+    color: black;
+    font-weight: 400;
+}
+nav button{
+    align-items: flex-end;
+}
+#main {
+    float: right;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 300px;
+}
+#input{
+    width: 30%;
+    height: 30px;
+    border:rgb(216, 216, 211);
+    border-style: groove;
+}
+#leftmenu {
+    background-color: rgb(216, 216, 211);
+    float: left;
+    width: 15%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height:140px;
+    border:  rgb(216, 216, 211);
+    border-radius: 2%;
+}
+#leftmenu h3{
+    margin-left: 10%;
+}
+#leftmenu h4{
+    margin-left: 10%;
+}
+#btnClear{
+    margin-bottom: 10px;
+}
+.column{
+    float: left;
+  width: 25%;
+}
+  .row > .column {
     padding: 0 8px;
   }
-  
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  
-  /* Create four equal columns that floats next to eachother */
   .column {
-    float: left;
+    float:left;
     width: 25%;
   }
-  
   /* The Modal (background) */
   .modal {
     display: none;
@@ -83,13 +149,11 @@
     right: 0;
     border-radius: 3px 0 0 3px;
   }
-  
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
   .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
-  
   /* Number text (1/3 etc) */
   .numbertext {
     color: #f2f2f2;
@@ -98,116 +162,36 @@
     position: absolute;
     top: 0;
   }
-  
+  img {
+    margin-bottom: -4px;
+  }
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
   /* Caption text */
   .caption-container {
     text-align: center;
     background-color: black;
     padding: 2px 16px;
     color: white;
-  }
-  
-  img.demo {
+  } 
+  .demo {
     opacity: 0.6;
   }
   
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
-  
-  img.hover-shadow {
-    transition: 0.3s;
-  }
-  
-  .hover-shadow:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  body {
-    background-color:rgb(243, 243, 243);
-    margin: 5px 10px 5px 10px;
-    padding: 0;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-#home{
-    width: 1000px;
-     margin-left: auto;
-     margin-right: auto;
-}
-header nav {
-    background-color:lightgray;
-    height: 40px;
-    display: flex;
-    justify-content:flex-start;
-    align-items:center;   
-}
-nav a {
-    margin-left: 10%;
-    text-decoration: none;
-    color: #444;
-    transition: all .2s ease;
-    
-}
-nav a:hover {
-    color: black;
-    font-weight: 400;
-}
-nav button{
-    align-items: flex-end;
-}
-#button{
-    margin-top: 10%;
-    width: 40%;
-}
-#main {
-    float: right;
-    width: 70%;
-    margin-top: 20px;
-    margin-bottom: 300px;
-}
-#main section{
-    margin-top: 7%;
-}
-#main article{
-    margin-left: 5%;
-}
-section img{
-    margin-bottom: 10%;
-}
-
-#aboutme{
-    background-color: rgb(216, 216, 211);
-    border: rgb(216, 216, 211);
-    border-radius: 5%;
-}
-.flex-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-#project1 div{
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 2%;
-}
-#project2{
-    background-color: rgb(216, 216, 211);
-    border: rgb(216, 216, 211);
-    border-radius: 5%;
-}
-input {
-    display: flex;
-    justify-content: space-around;
-    margin: 2;
-    font-size: 1rem;
-    transition: all 1s ease;
-}
-footer {
+  footer {
     background-color: lightslategray;
     display: flex;
     justify-content: flex-end;
-    width: 85%;
-    height: 150px;
+    width: 100%;
+    height: 270px;
     padding: 4rem 6rem 4rem 2rem;
 }
 footer article {
@@ -215,7 +199,7 @@ footer article {
     margin-bottom: 30px;
     background-color: white;
     width: auto;
-    height: 150px;
+    height: 200px;
     border: rgb(82, 54, 12);
     border-radius: 5%;
 }
@@ -229,9 +213,4 @@ footer article {
 }
 #contact > div > span{
     margin-left: 15px;
-}
-canvas{
-     background: rgb(202, 199, 199);
-     display: block; 
-     margin: 0 auto; 
 }

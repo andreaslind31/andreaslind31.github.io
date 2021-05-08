@@ -6,55 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 </head>
 
 <body>
     <div id="home">
         <header>
             <nav>
-                <a href="https://andreaslind31.github.io/">HOME</a>
-                <p>|</p>
-                <a href="https://andreaslind31.github.io/#contact">CONTACT</a>
+                <a href="https://andreaslind31.github.io/">BACK TO PORTFOLIO</a>
                 <!-- <button id="darkmode">Dark mode</button>
                 <button id="lightmode">Light mode</button> -->
             </nav>
         </header>
-        <h2>A gallery of your choice</h2>
-        <p>Pictures from flickr</p><br>
-        <form id="myForm" method="GET">
-            <input type="text" id="input" name="input" placeholder="Search here">
-        </form>
-        <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
-        <button id="btnClear" type="button" onclick="clearForm()">Clear</button>
-        <div class="row">
-            <div class="column">
-                <div id="flickr">
+        <section id="sectionAside">
+            <!-- base.js creates aside here -->
+        </section>
+        <main id="main">
+            <h2>A gallery of your choice</h2>
+            <p>Pictures from flickr</p><br>
+            <form id="myForm" method="GET">
+                <input type="text" id="input" name="input" placeholder="Search here">
+            </form><br>
+            <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
+            <button id="btnClear" type="button" onclick="clearForm()">Clear page</button>
+            <div id="row" class="row">
+
+                <!-- inserts from js rows here -->
+                
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
                     <!-- inserts from js rows here -->
+
+                    <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <section id="demo">
+                        <!-- inserts from js rows here -->
+                    </section>
                 </div>
             </div>
-        </div>
-        <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-
-                <div id="mySlides" class="mySlides">
-                    <!-- inserts from js rows here -->
-                </div>
-                <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
-                <div class="caption-container">
-                    <p id="caption"></p>
-                </div>
-                <div id="demo" class="column">
-                    <!-- inserts from js rows here -->
-                </div>
-            </div>
-        </div>
-
-        <script src="base.js"></script>
+        </main>
+        <section id="sectionFooter">
+            <!-- base.js creates footer here -->
+        </section>
     </div>
+    <script src="base.js"></script>
+    <script src="mail.js"></script>
 </body>
 
 </html>
