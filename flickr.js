@@ -105,8 +105,8 @@ function createFooter() {
   $("#summary").append('<h3>Summary</h3>');
   $("#summary").append('<div><p>This page was done using HTML5, CSS, JavaScript with flickrs API.<br> Methods used: <i>search, getRecent.</i></p></div>');
   $("#footer").append('<article id="contact"><h3>Contact me</h3></article>');
-  $("#contact").append('<div><a href="https://www.linkedin.com/in/andreas-lind31/"><img src="/flickrProject/img/LI-In-Bug.png"></a><a href="https://github.com/andreaslind31"><img src="/flickrProject/img/GitHub_Logo.png" width="100px"></a></div>');
-  $("#contact").append('<br><div><img src="/flickrProject/img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span></div>');
+  $("#contact").append('<div><a href="https://www.linkedin.com/in/andreas-lind31/"><img src="/img/LI-In-Bug.png"></a><a href="https://github.com/andreaslind31"><img src="/img/GitHub_Logo.png" width="100px"></a></div>');
+  $("#contact").append('<br><div><img src="/img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span></div>');
 }
 function openModal() {
   document.getElementById("myModal").style.display = "block";
