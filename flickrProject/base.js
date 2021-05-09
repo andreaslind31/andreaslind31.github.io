@@ -4,11 +4,24 @@ let currentURL = new URL(window.location.href);
 let searchParams = new URLSearchParams(currentURL.search);
 let search = searchParams.get("input");
 let slideIndex = 1;
+let hideSubmitBtn = document.getElementById("btnSubmit");
+let hideClearBtn = document.getElementById("btnClear");
+let placeholderInput = document.getElementById("input");
+let hideInputBox = document.getElementById("input");
+hideClearBtn.style.display = "none";
+
 document.getElementById("btnSubmit").addEventListener("click", function () {
   getPhotos()
+  hideSubmitBtn.style.display = "none";
+  hideClearBtn.style.display = "block";
+  hideInputBox.style.display = "none";
 });
+
 document.getElementById("btnClear").addEventListener("click", function () {
   document.location.reload();
+  hideSubmitBtn.style.display = "block";
+  hideClearBtn.style.display = "none";
+  hideInputBox.style.display = "block";
 });
 document.getElementById("prev").addEventListener("click", function () {
   plusSlides(-1)

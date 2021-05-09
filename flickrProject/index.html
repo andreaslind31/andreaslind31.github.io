@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+    
 </head>
 
 <body>
@@ -29,12 +29,12 @@
             <form id="myForm" method="GET">
                 <input type="text" id="input" name="input" placeholder="Search here">
             </form><br>
-            <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
-            <button id="btnClear" type="button" onclick="clearForm()">Clear page</button>
+            <button id="btnSubmit" type="button" onclick="startForm()" >Submit</button>
+            <button id="btnClear" type="button" onclick="clearForm()" >Clear page</button>
             <div id="row" class="row">
 
                 <!-- inserts from js rows here -->
-                
+
             </div>
             <div id="myModal" class="modal">
                 <span class="close cursor" onclick="closeModal()">&times;</span>
@@ -54,8 +54,9 @@
             <!-- base.js creates footer here -->
         </section>
     </div>
+    <!-- scripts controlling flickrs api here -->
     <script src="base.js"></script>
-    <script src="mail.js"></script>
+    
 </body>
 
 </html>
