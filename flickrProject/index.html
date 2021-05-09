@@ -25,7 +25,9 @@
         </section>
         <main id="main">
             <h2 id="galleryTitle">This will be a gallery of your choice</h2>
-            <a href="https://www.flickr.com/" id="flickrInfo">Pictures from flickr</a><br><br>
+            <div id="flickrInfo">
+            <p>Pictures from<a href="https://www.flickr.com/"><img src="img/flickr-logo.png" width="6%"></a></p>
+            </div>
             <form id="myForm" method="GET">
                 <input type="text" id="input" name="input" placeholder="Search here">
             </form><br>
@@ -35,20 +37,17 @@
         <section id="gallery">
             <div id="row" class="row">
 
-                <!-- inserts from js rows here -->
+                <!-- base.js creates gallery here -->
 
             </div>
             <div id="myModal" class="modal">
                 <span class="close cursor" onclick="closeModal()">&times;</span>
                 <div class="modal-content">
 
-                    <!-- inserts from js rows here -->
+                    <!-- base.js creates modal here -->
 
                     <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
-                    <section id="demo">
-                        <!-- inserts from js rows here -->
-                    </section>
                 </div>
             </div>
         </section>

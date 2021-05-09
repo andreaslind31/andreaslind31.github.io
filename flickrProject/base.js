@@ -3,19 +3,18 @@ let currentAddress = window.location.href;
 let currentURL = new URL(window.location.href);
 let searchParams = new URLSearchParams(currentURL.search);
 let search = searchParams.get("input");
-let slideIndex = 1;
 let submitBtn = document.getElementById("btnSubmit");
 let clearBtn = document.getElementById("btnClear");
 let inputBox = document.getElementById("input");
 let flickrInfo = document.getElementById("flickrInfo");
-
+let slideIndex = 1;
 
 clearBtn.style.display = "none";
 flickrInfo.style.display = "none";
 
 submitBtn.addEventListener("click", function () {
   getPhotos()
-  
+
   submitBtn.style.display = "none";
   clearBtn.style.display = "block";
   inputBox.style.display = "none";
@@ -52,7 +51,7 @@ document.getElementById("next").addEventListener("click", function () {
   plusSlides(1)
 })
 function getPhotos() {
-  
+
   let searchFor = document.forms["myForm"]["input"].value;
   let settings = {
     "async": true,
@@ -64,11 +63,11 @@ function getPhotos() {
   }
   if (searchFor === "") {
     settings.url = "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=8bc0311411d1a1580dc8435bbc341930&per_page=50&page=1&format=json&nojsoncallback=1"
-  } 
+  }
 
   $.ajax(settings).done(function (data) {
     console.log(data);
-    
+
     $.each(data.photos.photo, function (slideIndex, gp) {
       let farmId = gp.farm;
       let serverId = gp.server;
@@ -82,8 +81,7 @@ function getPhotos() {
         '.jpg" style="width:100%" onclick="openModal();currentSlide(' + slideIndex + ')" class="hover-shadow"></div>');
       $(".modal-content").append('<div id="slides" class="mySlides"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' +
         id + '_' + secret + '.jpg" style="width:100%"></div>');
-      $("#demo").append('<div id="secondCol" class="column"><img class="demo cursor" src="https://farm' + farmId + '.staticflickr.com/' +
-        serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="currentSlide(' + slideIndex + ')"></div>');
+      
       slideIndex++;
     });
     createAside();
@@ -93,9 +91,9 @@ function getPhotos() {
     } else {
       document.getElementById("galleryTitle").innerText = "A gallery of your choice";
     }
-    
+
   });
-  
+
 }
 function createAside() {
   $("#sectionAside").append('<aside id="leftmenu"></aside>');
@@ -119,26 +117,22 @@ function closeModal() {
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
+  let i;
+  let slides = $(".mySlides");
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  captionText.innerHTML = dots[slideIndex - 1].alt;
+  slides[slideIndex].style.display = "block";
 }
 
 showSlides(slideIndex);
