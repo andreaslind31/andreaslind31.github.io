@@ -4,24 +4,46 @@ let currentURL = new URL(window.location.href);
 let searchParams = new URLSearchParams(currentURL.search);
 let search = searchParams.get("input");
 let slideIndex = 1;
-let hideSubmitBtn = document.getElementById("btnSubmit");
-let hideClearBtn = document.getElementById("btnClear");
-let placeholderInput = document.getElementById("input");
-let hideInputBox = document.getElementById("input");
-hideClearBtn.style.display = "none";
+let submitBtn = document.getElementById("btnSubmit");
+let clearBtn = document.getElementById("btnClear");
+let inputBox = document.getElementById("input");
+let flickrInfo = document.getElementById("flickrInfo");
 
-document.getElementById("btnSubmit").addEventListener("click", function () {
+
+clearBtn.style.display = "none";
+flickrInfo.style.display = "none";
+
+submitBtn.addEventListener("click", function () {
   getPhotos()
-  hideSubmitBtn.style.display = "none";
-  hideClearBtn.style.display = "block";
-  hideInputBox.style.display = "none";
+  
+  submitBtn.style.display = "none";
+  clearBtn.style.display = "block";
+  inputBox.style.display = "none";
+  flickrInfo.style.display = "block";
 });
-
-document.getElementById("btnClear").addEventListener("click", function () {
+inputBox.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    getPhotos();
+    if (searchFor === "") {
+      $("#galleryTitle").textContent = "A gallery of some random pictures";
+    } else {
+      $("#galleryTitle").textContent = "A gallery of your choice";
+    }
+    submitBtn.style.display = "none";
+    clearBtn.style.display = "block";
+    inputBox.style.display = "none";
+    flickrInfo.style.display = "block";
+  }
+});
+clearBtn.addEventListener("click", function () {
   document.location.reload();
-  hideSubmitBtn.style.display = "block";
-  hideClearBtn.style.display = "none";
-  hideInputBox.style.display = "block";
+  submitBtn.style.display = "block";
+  clearBtn.style.display = "none";
+  inputBox.style.display = "block";
+  flickrInfo.style.display = "none";
 });
 document.getElementById("prev").addEventListener("click", function () {
   plusSlides(-1)
@@ -29,25 +51,24 @@ document.getElementById("prev").addEventListener("click", function () {
 document.getElementById("next").addEventListener("click", function () {
   plusSlides(1)
 })
-
-
 function getPhotos() {
+  
   let searchFor = document.forms["myForm"]["input"].value;
   let settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8bc0311411d1a1580dc8435bbc341930&text=" + searchFor + "&per_page=10&page=1&format=json&nojsoncallback=1",
+    "url": "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8bc0311411d1a1580dc8435bbc341930&text=" + searchFor +
+      "&per_page=50&page=1&format=json&nojsoncallback=1",
     "method": "GET",
     "headers": {}
   }
   if (searchFor === "") {
-    settings.url = "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=8bc0311411d1a1580dc8435bbc341930&per_page=10&page=1&format=json&nojsoncallback=1"
-  }
+    settings.url = "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=8bc0311411d1a1580dc8435bbc341930&per_page=50&page=1&format=json&nojsoncallback=1"
+  } 
 
   $.ajax(settings).done(function (data) {
     console.log(data);
-
-    // $("#galleryTitle").append(data.photos.photo[0].title + " Gallery");
+    
     $.each(data.photos.photo, function (slideIndex, gp) {
       let farmId = gp.farm;
       let serverId = gp.server;
@@ -56,20 +77,29 @@ function getPhotos() {
 
       console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
 
-      //  https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-      $("#row").append('<div class="column"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="openModal();currentSlide(' + slideIndex + ')" class="hover-shadow"></div>');
-      $(".modal-content").append('<div id="slides" class="mySlides"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%"></div>');
-      $("#demo").append('<div id="secondCol" class="column"><img class="demo cursor" src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="currentSlide(' + slideIndex + ')"></div>');
+      // this creates elements and images
+      $("#row").append('<div class="column"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret +
+        '.jpg" style="width:100%" onclick="openModal();currentSlide(' + slideIndex + ')" class="hover-shadow"></div>');
+      $(".modal-content").append('<div id="slides" class="mySlides"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' +
+        id + '_' + secret + '.jpg" style="width:100%"></div>');
+      $("#demo").append('<div id="secondCol" class="column"><img class="demo cursor" src="https://farm' + farmId + '.staticflickr.com/' +
+        serverId + '/' + id + '_' + secret + '.jpg" style="width:100%" onclick="currentSlide(' + slideIndex + ')"></div>');
       slideIndex++;
     });
     createAside();
     createFooter();
+    if (searchFor === "") {
+      document.getElementById("galleryTitle").innerText = "A gallery of random pictures";
+    } else {
+      document.getElementById("galleryTitle").innerText = "A gallery of your choice";
+    }
+    
   });
-
+  
 }
 function createAside() {
   $("#sectionAside").append('<aside id="leftmenu"></aside>');
-  $("#leftmenu").append('<div><h3>Interested?</h3><a href="#contact"><h4>Contact me!</h4></a></div>');                         
+  $("#leftmenu").append('<div><h3>How was this done?</h3><a href="#contact"><h4>Learn more</h4></a></div>');
 }
 function createFooter() {
   $("#sectionFooter").append('<footer id="footer"></footer>');

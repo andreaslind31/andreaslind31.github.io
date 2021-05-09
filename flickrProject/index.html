@@ -24,13 +24,15 @@
             <!-- base.js creates aside here -->
         </section>
         <main id="main">
-            <h2>A gallery of your choice</h2>
-            <p>Pictures from flickr</p><br>
+            <h2 id="galleryTitle">This will be a gallery of your choice</h2>
+            <a href="https://www.flickr.com/" id="flickrInfo">Pictures from flickr</a><br><br>
             <form id="myForm" method="GET">
                 <input type="text" id="input" name="input" placeholder="Search here">
             </form><br>
             <button id="btnSubmit" type="button" onclick="startForm()" >Submit</button>
             <button id="btnClear" type="button" onclick="clearForm()" >Clear page</button>
+        </main>
+        <section id="gallery">
             <div id="row" class="row">
 
                 <!-- inserts from js rows here -->
@@ -49,7 +51,7 @@
                     </section>
                 </div>
             </div>
-        </main>
+        </section>
         <section id="sectionFooter">
             <!-- base.js creates footer here -->
         </section>
