@@ -6,42 +6,24 @@ let search = searchParams.get("input");
 let submitBtn = document.getElementById("btnSubmit");
 let clearBtn = document.getElementById("btnClear");
 let inputBox = document.getElementById("input");
-let flickrInfo = document.getElementById("flickrInfo");
 let slideIndex = 1;
 
 clearBtn.style.display = "none";
-flickrInfo.style.display = "none";
 
 submitBtn.addEventListener("click", function () {
-  getPhotos()
-
-  submitBtn.style.display = "none";
+  clearPage();
+  getPhotos();
   clearBtn.style.display = "block";
-  inputBox.style.display = "none";
-  flickrInfo.style.display = "block";
 });
-inputBox.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    getPhotos();
-    if (searchFor === "") {
-      $("#galleryTitle").textContent = "A gallery of some random pictures";
-    } else {
-      $("#galleryTitle").textContent = "A gallery of your choice";
-    }
-    submitBtn.style.display = "none";
-    clearBtn.style.display = "block";
-    inputBox.style.display = "none";
-    flickrInfo.style.display = "block";
-  }
-});
+// inputBox.addEventListener("keyup", function (event) {
+//   if (event.keyCode === 13) {
+//     // Trigger the button element with a click
+//     submitBtn.click();
+//   }
+// });
 clearBtn.addEventListener("click", function () {
   document.location.reload();
-  submitBtn.style.display = "block";
   clearBtn.style.display = "none";
-  inputBox.style.display = "block";
   flickrInfo.style.display = "none";
 });
 document.getElementById("prev").addEventListener("click", function () {
@@ -50,6 +32,24 @@ document.getElementById("prev").addEventListener("click", function () {
 document.getElementById("next").addEventListener("click", function () {
   plusSlides(1)
 })
+function clearPage() {
+  let images = document.getElementsByTagName('img');
+  while (images.length > 0) {
+    images[0].parentNode.removeChild(images[0]);
+  }
+  let footer = document.getElementsByTagName('footer');
+  while (footer.length > 0) {
+    footer[0].parentNode.removeChild(footer[0]);
+  }
+  let aside = document.getElementsByTagName('aside');
+  while (aside.length > 0) {
+    aside[0].parentNode.removeChild(aside[0]);
+  }
+  let columClass = document.getElementsByClassName('column');
+  while (columClass.length > 0) {
+    columClass[0].parentNode.removeChild(columClass[0]);
+  }
+}
 function getPhotos() {
 
   let searchFor = document.forms["myForm"]["input"].value;
@@ -79,9 +79,9 @@ function getPhotos() {
       // this creates elements and images
       $("#row").append('<div class="column"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret +
         '.jpg" style="width:100%" onclick="openModal();currentSlide(' + slideIndex + ')" class="hover-shadow"></div>');
-      $(".modal-content").append('<div id="slides" class="mySlides"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' +
+      $(".modal-content").append('<div class="mySlides"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' +
         id + '_' + secret + '.jpg" style="width:100%"></div>');
-      
+
       slideIndex++;
     });
     createAside();
@@ -91,20 +91,17 @@ function getPhotos() {
     } else {
       document.getElementById("galleryTitle").innerText = "A gallery of your choice";
     }
-
   });
-
 }
 function createAside() {
   $("#sectionAside").append('<aside id="leftmenu"></aside>');
-  $("#leftmenu").append('<div><h3>How was this done?</h3><a href="#contact"><h4>Learn more</h4></a></div>');
+  $("#leftmenu").append('<div><h3>How was this done?</h3><br><a href="#contact"><h4>Learn more</h4></a></div>');
 }
 function createFooter() {
   $("#sectionFooter").append('<footer id="footer"></footer>');
   $("#footer").append('<article id="summary"></article>');
-  $("#summary").append('<h3>Summary</h3>');
-  $("#summary").append('<div><p>This page was done using HTML5, CSS, JavaScript with flickrs API.<br> Methods used: <i>search, getRecent.</i></p></div>');
-  $("#summary").append('<div><a href="#home"><strong>take me TOP</strong></a></div>');
+  $("#summary").append('<h3>Summary<a href="#home"><i>take me TOP</i></a></h3><p>Pictures from<a href="https://www.flickr.com/"><img src="/img/flickr-logo.png" width="10%"></a>');
+  $("#summary").append('<div><p>The page was done using HTML5, CSS, JavaScript with flickrs API.<br> Methods used: <i>search, getRecent.</i></p></div>');
   $("#footer").append('<article id="contact"><h3>Contact me</h3></article>');
   $("#contact").append('<div><a href="https://www.linkedin.com/in/andreas-lind31/"><img src="/img/LI-In-Bug.png"></a><a href="https://github.com/andreaslind31"><img src="/img/GitHub_Logo.png" width="100px"></a></div>');
   $("#contact").append('<br><div><img src="/img/mail-outline 1.svg"><span> andreaslind31@gmail.com</span></div>');

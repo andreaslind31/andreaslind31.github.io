@@ -15,8 +15,6 @@
         <header>
             <nav>
                 <a href="index.html">BACK TO PORTFOLIO</a>
-                <!-- <button id="darkmode">Dark mode</button>
-                <button id="lightmode">Light mode</button> -->
             </nav>
         </header>
         <section id="sectionAside">
@@ -24,14 +22,13 @@
         </section>
         <main id="main">
             <h2 id="galleryTitle">This will be a gallery of your choice</h2>
-            <div id="flickrInfo">
-            <p>Pictures from<a href="https://www.flickr.com/"><img src="/img/flickr-logo.png" width="6%"></a></p>
-            </div>
             <form id="myForm" method="GET">
                 <input type="text" id="input" name="input" placeholder="Search here">
             </form><br>
-            <button id="btnSubmit" type="button" onclick="startForm()" >Submit</button>
-            <button id="btnClear" type="button" onclick="clearForm()" >Clear page</button>
+            <div>
+                <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
+                <button id="btnClear" type="button" onclick="clearForm()">Clear page</button>
+            </div>
         </main>
         <section id="gallery">
             <div id="row" class="row">
@@ -56,7 +53,7 @@
     </div>
     <!-- scripts controlling flickrs api here -->
     <script src="/flickr.js"></script>
-    
+
 </body>
 
 </html>
