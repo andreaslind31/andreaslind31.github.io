@@ -42,8 +42,35 @@ nav button{
 #input{
     width: 30%;
     height: 30px;
-    border:rgb(216, 216, 211);
-    border-style: groove;
+    border: solid;
+    border-color: rgb(223, 220, 220);
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+button{
+    border-radius: 8px;
+    border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: all .2s ease;
+}
+button:hover{
+    color: black;
+    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
+}
+#btnSubmit{
+    background-color: #04AA6D;
+}
+#btnSubmit:hover{
+    color: black;
+}
+#btnClear{
+    background-color: #aa0404;
 }
 #leftmenu {
     background-color: rgb(216, 216, 211);
@@ -51,9 +78,9 @@ nav button{
     width: 15%;
     margin-top: 40px;
     margin-bottom: 20px;
-    height:150px;
+    height:180px;
     border:  rgb(216, 216, 211);
-    border-radius: 2%;
+    border-radius: 8px;
 }
 #leftmenu h3{
     margin-left: 10%;
@@ -62,18 +89,10 @@ nav button{
 #leftmenu h4{
     margin-left: 10%;
 }
-#btnSubmit{
-    width: 15%;
-    margin-bottom: 10px;
-}
-#btnClear{
-    width: 15%;
-    margin-bottom: 10px;
-}
-
 .column{
   float: left;
   width: 25%;
+  max-height: 200px;
 }
 .row > .column {
     padding: 0 8px;
@@ -101,6 +120,7 @@ nav button{
     overflow: auto;
 }
 .modal-content {
+    
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -123,7 +143,13 @@ nav button{
     cursor: pointer;
 }
 .mySlides {
+    
     display: none;
+}
+.mySlides > img {
+    border:  none;
+    border-radius: 8px;
+    margin-bottom: -4px;
 }
 .prev,
 .next {
@@ -149,21 +175,19 @@ nav button{
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-img {
-    margin-bottom: 0px;
-}
+
 .active,
 .demo:hover {
     opacity: 1;
 }
 .hover-shadow:hover {
-    box-shadow: 4px 10px 10px 6px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
+    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
 } 
 footer {
     background-color: lightslategray;
     display: flex;
     justify-content: flex-end;
-    margin-top: 10%;
+    margin-top: 20%;
     width: 100%;
     height: 270px;
     padding: 4rem 6rem 4rem 2rem;
