@@ -7,31 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Lind - Flickr App</title>
     <link rel="stylesheet" href="/flickrStyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
 </head>
 
 <body>
+    
     <div id="home">
         <header>
             <nav>
                 <a href="index.html">BACK TO PORTFOLIO</a>
             </nav>
         </header>
-        <section id="sectionAside">
+        <!-- <section id="sectionAside"> -->
             <!-- base.js creates aside here -->
-        </section>
+        <!-- </section> -->
         <main id="main">
             <h2 id="galleryTitle">This will be a gallery of your choice</h2>
             <form id="myForm" method="GET">
                 <input type="text" id="input" name="input" placeholder="Search here">
             </form><br>
             <div>
-                <button id="btnSubmit" type="button" onclick="startForm()">Submit</button>
-                <button id="btnClear" type="button" onclick="clearForm()">Clear page</button>
+                <button id="btnSubmit" type="button" onclick="startForm()"><i class="material-icons">search</i></button>
+                <button id="btnClear" type="button" onclick="clearForm()"><i class="material-icons">delete</i></button>
             </div>
         </main>
         <section id="gallery">
-            <div id="row" class="row">
+            <div id="grid" class="grid">
 
                 <!-- base.js creates gallery here -->
 
@@ -47,11 +50,11 @@
                 </div>
             </div>
         </section>
-        <section id="sectionFooter">
+        <!-- <section id="sectionFooter"> -->
             <!-- base.js creates footer here -->
-        </section>
+        <!-- </section> -->
     </div>
-    <!-- scripts controlling flickrs api here -->
+        <!-- scripts controlling flickrs api here -->
     <script src="/flickr.js"></script>
 
 </body>

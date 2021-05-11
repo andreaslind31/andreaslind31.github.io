@@ -1,16 +1,24 @@
 * {
     box-sizing: border-box;
   }
+html{
+ /* background-image: linear-gradient(to right top, #885070, #81547a, #785983, #6d5e89, #62638e, #5a6d99, #5077a2, #4481a9, #3393b6, #23a6bf, #24b8c2, #3ec9c0); */
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
 body {
-    background-color:rgb(243, 243, 243);
-    margin: 5px 10px 5px 10px;
+    background-color: #008E9B;
     padding: 0;
+    margin: 0;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #home{
-    width: 1000px;
-     margin-left: auto;
-     margin-right: auto;
+    width: auto;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 header nav {
     background-color:lightgray;
@@ -34,32 +42,38 @@ nav button{
     align-items: flex-end;
 }
 #main {
-    float: right;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 80%;
     margin-top: 20px;
     margin-bottom: 120px;
 }
 #input{
-    width: 30%;
-    height: 30px;
+    width: 100%;
+    height: 40px;
     border: solid;
     border-color: rgb(223, 220, 220);
     border-radius: 8px;
     font-size: 16px;
     padding-left: 10px;
+    margin-top: 40%;
+}
+#input:focus{
+    outline: none;
 }
 button{
-  position: absolute;
-  top: 30%;
+    position: absolute;
+    top: 20%;
   cursor: pointer;
   border-radius: 8px;
   border: none;
   color: white;
-  padding: 15px;
+  height: 40px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin: 4px 2px;
   transition: all .2s ease;
 }
 button:hover{
@@ -68,21 +82,23 @@ button:hover{
 }
 #btnSubmit{
     background-color: #04AA6D;
+    width: 70px;
 }
 #btnSubmit:hover{
     color: black;
 }
 #btnClear{
     background-color: #aa0404;
-    right:55%;
+    right:35%;
 }
-#leftmenu {
+/* #leftmenu {
     background-color: rgb(216, 216, 211);
-    float: left;
-    width: 15%;
+    float: right;
+    width: 13%;
     margin-top: 40px;
     margin-bottom: 20px;
-    height:180px;
+    margin-right: 10px;
+    height:140px;
     border:  rgb(216, 216, 211);
     border-radius: 8px;
 }
@@ -92,31 +108,32 @@ button:hover{
 }
 #leftmenu h4{
     margin-left: 10%;
+} */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(4, 250px);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    height: 100vh;
 }
-.row > .column {
-    padding: 0 4px;
-    margin-bottom: 40px;
-}
-.row:after {
+.grid:after {
     content: "";
     display: table;
     clear: both;
 }
-.column {
-    float:left;
-    width: 25%;
+.grid img{
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
 }
-.column > img{
-    max-width: 250px;
-    max-height: 120px;
-}
-.modal {
+#myModal {
     display: none;
     background-color: rgba(17, 16, 16, 0.801);
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     left: 0;
     top: 0;
     width: 100%;
@@ -124,13 +141,24 @@ button:hover{
     overflow: auto;
 }
 .modal-content {
-    
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     width: 80%;
-    max-width: 1200px;
+    max-width: 30%;
+    max-height: 60%;
+}
+.mySlides {
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mySlides > img {
+    border:  none;
+    border-radius: 8px;
+    margin-bottom: -4px;
 }
 .close {
     color: white;
@@ -146,15 +174,7 @@ button:hover{
     text-decoration: none;
     cursor: pointer;
 }
-.mySlides {
-    
-    display: none;
-}
-.mySlides > img {
-    border:  none;
-    border-radius: 8px;
-    margin-bottom: -4px;
-}
+
 .prev,
 .next {
     cursor: pointer;
@@ -178,11 +198,6 @@ button:hover{
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
-
-.active,
-.demo:hover {
-    opacity: 1;
 }
 .hover-shadow:hover {
     box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
