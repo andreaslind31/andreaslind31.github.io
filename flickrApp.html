@@ -9,29 +9,43 @@
     <link rel="stylesheet" href="/flickrStyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
 </head>
 
 <body>
-    
     <div id="home">
         <header>
             <nav>
                 <a href="index.html">BACK TO PORTFOLIO</a>
             </nav>
         </header>
-        <!-- <section id="sectionAside"> -->
-            <!-- base.js creates aside here -->
-        <!-- </section> -->
         <main id="main">
             <h2 id="galleryTitle">This will be a gallery of your choice</h2>
             <form id="myForm" method="GET">
-                <input type="text" id="input" name="input" placeholder="Search here">
+                <div class="input">
+                    <input type="text" id="input" name="input" placeholder="Search here">
+                </div>
             </form><br>
             <div>
                 <button id="btnSubmit" type="button" onclick="startForm()"><i class="material-icons">search</i></button>
-                <button id="btnClear" type="button" onclick="clearForm()"><i class="material-icons">delete</i></button>
-            </div>
+                <!-- <button id="btnClear" type="button" onclick="clearForm()"><i class="material-icons">delete</i></button> -->
+                <div class="dropDowns">
+                    <select class="sort" name="sort" id="sort" required>Sort
+                        <option value="" disabled selected hidden> Sort </option>
+                        <option value="0"> Relevance </option>
+                        <option value="1"> Uploaded </option>
+                        <option value="2"> Date </option>
+                        <option value="3"> Interesting </option>
+                    </select>
+                    <select class="perPage" name="imgPerPage" id="imgPerPage" required>ImgPerPage
+                        <option value="" disabled selected hidden> Img / page </option>
+                        <option value="0"> 30 </option>
+                        <option value="1"> 60 </option>
+                        <option value="2"> 90 </option>
+                        <option value="3"> 120 </option>
+                    </select>
+                </div>
+                </form>
+
         </main>
         <section id="gallery">
             <div id="grid" class="grid">
@@ -39,24 +53,20 @@
                 <!-- base.js creates gallery here -->
 
             </div>
-            <div id="myModal" class="modal">
-                <span class="close cursor" onclick="closeModal()">&times;</span>
-                <div class="modal-content">
+            <div id="myLightbox" class="lightbox">
+                <div class="lightbox-content">
 
-                    <!-- base.js creates modal here -->
+                    <!-- base.js creates lightbox here -->
 
-                    <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
                 </div>
+                <a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </section>
-        <!-- <section id="sectionFooter"> -->
-            <!-- base.js creates footer here -->
-        <!-- </section> -->
     </div>
-        <!-- scripts controlling flickrs api here -->
+    <!-- script for flickrs api here -->
     <script src="/flickr.js"></script>
-
 </body>
 
 </html>

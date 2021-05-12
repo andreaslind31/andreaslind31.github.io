@@ -1,27 +1,26 @@
 * {
     box-sizing: border-box;
   }
-html{
- /* background-image: linear-gradient(to right top, #885070, #81547a, #785983, #6d5e89, #62638e, #5a6d99, #5077a2, #4481a9, #3393b6, #23a6bf, #24b8c2, #3ec9c0); */
- -webkit-background-size: cover;
- -moz-background-size: cover;
- -o-background-size: cover;
- background-size: cover;
-}
 body {
-    background-color: #008E9B;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #B0A8B9;
     padding: 0;
     margin: 0;
+    height: 100%;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #home{
+    background-image: linear-gradient(to bottom, #695761, #6f5e6d, #746679, #776f85, #787891, #7d7f98, #8286a0, #878da7, #9293ac, #9d9ab0, #a7a1b4, #b0a8b9);
     width: auto;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 header nav {
-    background-color:lightgray;
+    background-color:#695761;
     height: 40px;
     display: flex;
     justify-content:flex-start;
@@ -30,16 +29,20 @@ header nav {
 a {
     margin-left: 5%;
     text-decoration: none;
-    color: #444;
+    color: rgb(138, 136, 136);
     transition: all .2s ease;
+    text-shadow: horizontal-offset vertical-offset blur color;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     
 }
 a:hover {
     color: black;
     font-weight: 400;
 }
-nav button{
-    align-items: flex-end;
+h2{
+    color: rgb(204, 200, 200);
+    text-shadow: horizontal-offset vertical-offset blur color;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 #main {
     display: flex;
@@ -50,65 +53,96 @@ nav button{
     margin-bottom: 120px;
 }
 #input{
-    width: 100%;
-    height: 40px;
+    width: 80%;
+    height: 50px;
     border: solid;
     border-color: rgb(223, 220, 220);
+    background-color: rgb(223, 220, 220);
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 20px;
     padding-left: 10px;
-    margin-top: 40%;
+    margin-top: 32%;
 }
 #input:focus{
     outline: none;
 }
-button{
-    position: absolute;
-    top: 20%;
+.input input:focus{
+    outline: none;
+}
+
+#btnSubmit{
+    position:absolute;
+    right:35%;
+  top: 20%;
+  left: 53%;
   cursor: pointer;
   border-radius: 8px;
   border: none;
   color: white;
-  height: 40px;
+  height: 95px;
   padding: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   transition: all .2s ease;
-}
-button:hover{
-    color: black;
-    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
-}
-#btnSubmit{
     background-color: #04AA6D;
-    width: 70px;
 }
 #btnSubmit:hover{
     color: black;
+    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
 }
-#btnClear{
+ #btnClear{
+     position: fixed;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  height: 95px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all .2s ease;
     background-color: #aa0404;
-    right:35%;
+  top: 20%;
+  left: 57%;
+  right:30%; 
 }
-/* #leftmenu {
-    background-color: rgb(216, 216, 211);
-    float: right;
-    width: 13%;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    height:140px;
-    border:  rgb(216, 216, 211);
+#btnClear:hover{
+    color: black;
+    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
+} 
+.dropDowns{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    width: 120%;
+    margin-top: 77%;
+    margin-left: -150%;
     border-radius: 8px;
+    box-shadow: 0 0 1rem rgba(82, 56, 69, 0.2);
+    background-color:rgb(223, 220, 220);
 }
-#leftmenu h3{
-    margin-left: 10%;
-    margin-bottom: -4px;
+.dropDowns select:focus{
+    outline: none;
 }
-#leftmenu h4{
+.dropDowns select{
+    font-size: 18px;
+    border: none;
+    background: none; 
+    cursor: pointer;
+    
+}
+.sort{
+    width: 60px;
+}
+.perPage{
+    width: 110px;
     margin-left: 10%;
-} */
+}
 .grid{
     display:grid;
     grid-template-columns: repeat(4, 250px);
@@ -127,7 +161,10 @@ button:hover{
     height: 200px;
     cursor: pointer;
 }
-#myModal {
+.hover-shadow:hover {
+    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
+} 
+#myLightbox {
     display: none;
     background-color: rgba(17, 16, 16, 0.801);
     position: fixed;
@@ -140,7 +177,7 @@ button:hover{
     height: 100%;
     overflow: auto;
 }
-.modal-content {
+.lightbox-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -154,27 +191,17 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
 }
 .mySlides > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
     border:  none;
     border-radius: 8px;
-    margin-bottom: -4px;
+    /* margin-bottom: -4px; */
 }
-.close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 35px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: #999;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .prev,
 .next {
     cursor: pointer;
@@ -183,7 +210,7 @@ button:hover{
     width: auto;
     padding: 16px;
     margin-top: -50px;
-    color: white;
+    color: rgb(126, 106, 106);
     font-weight: bold;
     font-size: 20px;
     transition: 0.6s ease;
@@ -197,12 +224,10 @@ button:hover{
 }
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.637);
 }
-.hover-shadow:hover {
-    box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.2), 6px 10px 10px 6px rgba(0, 0, 0, 0.19);
-} 
-footer {
+
+/* footer {
     background-color: lightslategray;
     display: flex;
     justify-content: flex-end;
@@ -210,8 +235,8 @@ footer {
     width: 100%;
     height: 270px;
     padding: 4rem 6rem 4rem 2rem;
-}
-footer article {
+} */
+/* footer article {
     padding: 15px;
     margin-bottom: 30px;
     background-color: white;
@@ -233,4 +258,4 @@ footer article {
 }
 #contact > div > span{
     margin-left: 15px;
-}
+} */

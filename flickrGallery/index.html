@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/flickrGallery/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <title>Andreas Lind - flickr Gallery</title>
+</head>
+
+<body>
+    <section class="search">
+        <h1>Make your own gallery</h1>
+        <form id="myForm" method="GET">
+            <div class="searchBar">
+                <input type="text" id="input" name="input" placeholder="Search images here" required>
+            </div>
+        </form><br>
+        <a href="#pages"><input id="submitBtn" type="submit" value="search" class="material-icons" name="Search"></a>
+        <div class="dropDowns">
+            <select class="sort" name="sort" id="sort" required>Sort
+                <option value="" disabled selected hidden> Sort </option>
+                <option value="0"> Relevance </option>
+                <option value="1"> Uploaded </option>
+                <option value="2"> Date </option>
+                <option value="3"> Interesting </option>
+            </select>
+            <select class="perpage" name="imgPerPage" id="imgPerPage" required>ImgPerPage
+                <option value="" disabled selected hidden> Pagehits </option>
+                <option value="0"> 15 </option>
+                <option value="1"> 30 </option>
+                <option value="2"> 60 </option>
+                <option value="3"> 100 </option>
+            </select>
+        </div>
+        <h2 id="h2"></h2>
+        <div id="pages"></div>
+        <section class="button_next">
+            <a class="prev" onclick="PrevPage()">&laquo; Previous</a>
+            <a class="next" onclick="NextPage()"> &nbsp&nbsp Next &raquo; &nbsp &nbsp</a>
+        </section>
+    </section>
+
+    <section id="gallery">
+        <!-- fetches photos from flickr by base.js here -->
+    </section>
+
+    <div id="myLightbox" class="lightbox">
+        <div class="lightbox-content" id="lightbox-content">
+        <!-- base.js creates lightbox content here -->
+        </div>
+    </div>
+
+</body>
+<script src="/flickrGallery/base.js"></script>
+
+</html>
