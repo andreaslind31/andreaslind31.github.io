@@ -1,4 +1,3 @@
-const btn = document.querySelector(".material-icons")
 const sorts = [
     "relevance",
     "date-posted-desc",
@@ -11,10 +10,11 @@ const hits = [
     "60",
     "100",
 ]
+const btn = document.querySelector(".material-icons")
+let myLightbox = document.getElementById("myLightbox");
 let imgCounter = 0;
 let pageCounter = 1;
 let counter = 1;
-let myLightbox = document.getElementById("myLightbox");
 
 btn.addEventListener("click", async function () {
     pageCounter = 1;
