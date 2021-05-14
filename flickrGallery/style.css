@@ -170,6 +170,80 @@ a{
     border:  none;
     border-radius: 8px;
 }
+
+.button_next{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: row;
+}
+.prev, .next {
+    background-color: #807a86;
+    color: white;
+    padding: 0.7rem;
+    margin: 0.3rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+  }
+  .prev:hover, .next:hover{
+    background-color: #68616e;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  h1{
+      font-size: 2.2rem;
+  }
+  #h2{
+    text-align: center;
+    font-size: 0.7rem;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.459);
+  }
+  #pages{
+    text-align: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.459);
+    margin-top: 6rem;
+  }
+  #popUp{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 50%;
+    border-style: solid;;
+    background-color: #807a86;
+    color: white;
+    transition: all 0.3s ease;
+}
+#popUp:hover{
+    background-color: #68616e;
+}
+#popUp span{
+    font-size: 2rem;
+}
+#popUpNext{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 50%;
+    border-style: solid;;
+    background-color: #807a86;
+    color: white;
+    transition: all 0.3s ease;
+}
+#popUpNext:hover{
+    background-color: #68616e;
+}
+#popUpNext span{
+    font-size: 2rem;
+}
 @media only screen and (max-width: 1100px)
 {
     #gallery{
@@ -223,6 +297,9 @@ a{
         margin-top: 30%;
         margin-right: 40%;
     }
+    #popUp{
+        right: 10%;
+    }
 }
 
 @media only screen and (max-width: 700px)
@@ -261,60 +338,9 @@ a{
         margin-top: 30%;
         margin-right: 80%;
     }
+    #popUp{
+        right: 40%;
+        
+    }
     
-    
-}
-.button_next{
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    flex-direction: row;
-}
-.prev, .next {
-    background-color: #807a86;
-    color: white;
-    padding: 0.7rem;
-    margin: 0.3rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-  }
-  .prev:hover, .next:hover{
-    background-color: #68616e;
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-  h1{
-      font-size: 2.2rem;
-  }
-  #h2{
-    text-align: center;
-    font-size: 0.7rem;
-    font-style: italic;
-    color: rgba(0, 0, 0, 0.459);
-  }
-  #pages{
-    text-align: center;
-    font-size: 0.8rem;
-    font-style: italic;
-    color: rgba(0, 0, 0, 0.459);
-    margin-top: 6rem;
-  }
-  #popUp{
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    padding: 1.5rem;
-    margin: 1rem;
-    border-radius: 50%;
-    border-style: solid;;
-    background-color: #807a86;
-    color: white;
-    transition: all 0.3s ease;
-}
-#popUp:hover{
-    background-color: #68616e;
-}
-#popUp span{
-    font-size: 2rem;
 }

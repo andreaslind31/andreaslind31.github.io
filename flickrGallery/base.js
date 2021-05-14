@@ -12,6 +12,7 @@ const hits = [
 ]
 const btn = document.querySelector(".material-icons");
 const popUp = document.getElementById("popUp");
+const popUpNext = document.getElementById("popUpNext");
 let myLightbox = document.getElementById("myLightbox");
 let imgCounter = 0;
 let pageCounter = 1;
@@ -31,13 +32,18 @@ myLightbox.addEventListener("click", function (event) {
 window.onscroll = function () {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         popUp.style.display = "flex";
+        popUpNext.style.display = "flex";
     } else {
         popUp.style.display = "none";
+        popUpNext.style.display = "none";
     }
 };
 popUp.addEventListener("click", function () {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+});
+popUpNext.addEventListener("click", function () {
+    NextPage();
 });
 async function ApiSearch() {
     
