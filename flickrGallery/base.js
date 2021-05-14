@@ -1,8 +1,8 @@
 const sorts = [
     "relevance",
-    "date-posted-desc",
-    "date-taken-desc",
     "interestingness-desc",
+    "date-posted-desc",
+    "date-posted-asc",
 ]
 const hits = [
     "15",
@@ -10,7 +10,8 @@ const hits = [
     "60",
     "100",
 ]
-const btn = document.querySelector(".material-icons")
+const btn = document.querySelector(".material-icons");
+const popUp = document.getElementById("popUp");
 let myLightbox = document.getElementById("myLightbox");
 let imgCounter = 0;
 let pageCounter = 1;
@@ -27,6 +28,17 @@ myLightbox.addEventListener("click", function (event) {
     }
     CloseImg();
   })
+window.onscroll = function () {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        popUp.style.display = "flex";
+    } else {
+        popUp.style.display = "none";
+    }
+};
+popUp.addEventListener("click", function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
 async function ApiSearch() {
     
     let images = document.getElementsByTagName('img');

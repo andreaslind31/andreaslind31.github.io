@@ -148,7 +148,7 @@ a{
 }
 .lightbox-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: none;
     margin: auto;
     padding: 0;
     width: 80%;
@@ -170,6 +170,100 @@ a{
     border:  none;
     border-radius: 8px;
 }
+@media only screen and (max-width: 1100px)
+{
+    #gallery{
+        grid-template-columns: repeat(4,200px);
+    }
+    .lightbox-content {
+        margin-top: 30%;
+        margin-right: 90%;
+    }
+}
+
+@media only screen and (max-width: 900px)
+{
+    .searchBar{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: 380px;
+        margin-top: 5rem;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+    .searchBar #input{
+        font-size: 25px;
+        margin-left: 17px;
+        width: 300px;
+    }
+    .dropDowns{
+        width: 400x;
+        padding: 0.2rem;
+        padding-left: 1rem;
+        margin-right: 0.5%;
+        margin-left: 18px;
+        gap: 1rem;
+    }
+    .dropDowns select{
+        width: auto;
+        font-size: 20px;
+        border: none;
+        background: none; 
+    }
+    #gallery{
+        grid-template-columns: repeat(3,200px);
+        grid-gap: 2px;
+        height: 10vh;
+    }
+    #gallery img{
+        width: 200px;
+        height: 170px;
+    }
+    .lightbox-content {
+        margin-top: 30%;
+        margin-right: 40%;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    .searchBar{
+        width: 300px;
+    }
+    .dropDowns{
+        width: 300px;
+        padding: 0.2rem;
+        padding-left: 1rem;
+        margin-left: 2px;
+        gap: 0.5rem;
+    }
+    .dropDowns select{
+        font-size: 16px;
+    }
+    label{
+        font-size: 14px;
+    }
+    input[type=submit] {
+        margin-left: 18rem;
+        }  
+    #gallery{
+        grid-template-columns: repeat(2,200px);
+        grid-gap: 2px;
+        height: 10vh;
+    }
+    #gallery img{
+        width: 170px;
+        height: 100px;
+    }
+    .lightbox-content {
+        max-height: max-content;
+        max-width: max-content;
+        margin-top: 30%;
+        margin-right: 80%;
+    }
+    
+    
+}
 .button_next{
     display: flex;
     justify-content: flex-start;
@@ -178,7 +272,6 @@ a{
 }
 .prev, .next {
     background-color: #807a86;
-    /* background-color: #86178a; */
     color: white;
     padding: 0.7rem;
     margin: 0.3rem;
@@ -193,22 +286,6 @@ a{
   h1{
       font-size: 2.2rem;
   }
-  #popup {
-    display: none; 
-    position: fixed; 
-    z-index: 1;
-    padding-top: 100px; 
-    left: 25%;
-    top: 25%;
-    width: 100%;
-    max-width: 700px; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.719);
-    animation-name: example;
-    animation-duration: 7s;
-    display: none;
-    color: white;
-  }
   #h2{
     text-align: center;
     font-size: 0.7rem;
@@ -222,4 +299,22 @@ a{
     color: rgba(0, 0, 0, 0.459);
     margin-top: 6rem;
   }
-  
+  #popUp{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 50%;
+    border-style: solid;;
+    background-color: #807a86;
+    color: white;
+    transition: all 0.3s ease;
+}
+#popUp:hover{
+    background-color: #68616e;
+}
+#popUp span{
+    font-size: 2rem;
+}

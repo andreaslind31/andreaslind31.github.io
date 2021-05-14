@@ -22,15 +22,15 @@
         </form><br>
         <a href="#pages"><input id="submitBtn" type="submit" value="search" class="material-icons" name="Search"></a>
         <div class="dropDowns">
-            <select class="sort" name="sort" id="sort" required>Sort
-                <option value="" disabled selected hidden> Sort </option>
+            <label for="sort">Sort by: </label>
+            <select class="sort" name="sort" id="sort">
                 <option value="0"> Relevance </option>
-                <option value="1"> Uploaded </option>
-                <option value="2"> Date </option>
-                <option value="3"> Interesting </option>
+                <option value="1"> Trending </option>
+                <option value="2"> Most recent </option>
+                <option value="3"> Old to new </option>
             </select>
-            <select class="perpage" name="imgPerPage" id="imgPerPage" required>ImgPerPage
-                <option value="" disabled selected hidden> Pagehits </option>
+            <label for="imgPerPage">Pics / page: </label>
+            <select class="perpage" name="imgPerPage" id="imgPerPage">ImgPerPage
                 <option value="0"> 15 </option>
                 <option value="1"> 30 </option>
                 <option value="2"> 60 </option>
@@ -40,8 +40,8 @@
         <h2 id="h2"></h2>
         <div id="pages"></div>
         <section class="button_next">
-            <a class="prev" onclick="PrevPage()">&laquo; Previous</a>
-            <a class="next" onclick="NextPage()"> &nbsp&nbsp Next &raquo; &nbsp &nbsp</a>
+            <a class="prev" onclick="PrevPage()"><span class="material-icons">chevron_left</span></a>
+            <a class="next" onclick="NextPage()"><span class="material-icons">chevron_right</span></a>
         </section>
     </section>
 
@@ -54,7 +54,7 @@
         <!-- base.js creates lightbox content here -->
         </div>
     </div>
-
+    <button id="popUp"><span class="material-icons">arrow_upward</span></button>
 </body>
 <script src="/flickrGallery/base.js"></script>
 
