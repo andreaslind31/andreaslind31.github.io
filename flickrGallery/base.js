@@ -20,14 +20,14 @@ let counter = 1;
 
 btn.addEventListener("click", async function () {
     pageCounter = 1;
-    ApiSearch();
+    getPhotos();
 
 });
 myLightbox.addEventListener("click", function (event) {
     if (event.target !== event.currentTarget) {
       return;
     }
-    CloseImg();
+    closeLightbox();
   })
 window.onscroll = function () {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -43,9 +43,9 @@ popUp.addEventListener("click", function () {
     document.documentElement.scrollTop = 0;
 });
 popUpNext.addEventListener("click", function () {
-    NextPage();
+    nextPage();
 });
-async function ApiSearch() {
+async function getPhotos() {
     
     let images = document.getElementsByTagName('img');
     while (images.length > 0) {
@@ -94,28 +94,28 @@ async function ApiSearch() {
         console.log(farmId)
     }
 };
-function OpenImg() {
+function openLightbox() {
     myLightbox.style.display = 'block';
 }
-function CloseImg() {
+function closeLightbox() {
     myLightbox.style.display = "none";
 }
-function PrevPage() {
+function prevPage() {
     pageCounter--;
 
     if (pageCounter < 1) {
         swal("Sorry!", "...you are already on the first page");
         pageCounter = 1;
     }
-    ApiSearch();
+    getPhotos();
 }
-function NextPage() {
+function nextPage() {
     console.log(pageCounter)
     pageCounter++;
-    ApiSearch();
+    getPhotos();
 
 }
-function SetValues(counter) {
+function setValues(counter) {
     var next = document.getElementsByClassName('pictures');
     if (counter == 1) {
         for (var i = 0; i < next.length; i++) {
@@ -159,9 +159,9 @@ function SetValues(counter) {
     }
 }
 function currentImg(index) {
-    ImgLightbox(index);
+    imgInLightbox(index);
 }
-function ImgLightbox(index) {
+function imgInLightbox(index) {
     let i;
     let slides = document.getElementsByClassName("lightboxImg");
     for (i = 0; i < slides.length; i++) {
