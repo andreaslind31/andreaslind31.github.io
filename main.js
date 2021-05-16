@@ -4,7 +4,7 @@ const Home = {template: `
 
     <main id='home'>
         <div class="about__me">
-            <img src="/img/avatar.JPG" alt="user avatar" width="30%">
+            <img src="./img/avatar.JPG" alt="user avatar" width="30%">
             <h1>Andreas Lind</h1>
             <h3>.NET Student</h3>
             <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
@@ -20,7 +20,7 @@ const Projects = {
         
         <header id="site_header" class="container d_flex">
             <div class="bio__media">
-                <img src="/img/avatar.JPG" alt="user avatar">
+                <img src="img/avatar.JPG" alt="user avatar">
                 <div class="bio__media__text">
                     <h1>Andreas Lind</h1>
                     <h3>.NET student</h3>
