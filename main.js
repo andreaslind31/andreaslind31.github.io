@@ -4,7 +4,7 @@ const Home = {template: `
 
     <main id='home'>
         <div class="about__me">
-            <img src="/img/avatar.jpg" alt="user avatar" width="30%">
+            <img src="/img/avatar.JPG" alt="user avatar" width="30%">
             <h1>Andreas Lind</h1>
             <h3>.NET Student</h3>
             <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
@@ -20,7 +20,7 @@ const Projects = {
         
         <header id="site_header" class="container d_flex">
             <div class="bio__media">
-                <img src="/img/avatar.jpg" alt="user avatar">
+                <img src="/img/avatar.JPG" alt="user avatar">
                 <div class="bio__media__text">
                     <h1>Andreas Lind</h1>
                     <h3>.NET student</h3>
@@ -40,7 +40,7 @@ const Projects = {
         
             <!-- Show an error message if the REST API doesn't work -->
             <div class="error" v-if="errors">
-                Sorry! It seems we can't fetch data righ now 😥
+                Sorry! It seems we can't fetch data right now 😥
             </div>
             <!-- Otherwise show a section for our portfolio projects and skills section-->
             <section id="portfolio" v-else>
