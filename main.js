@@ -4,7 +4,7 @@ const Home = {template: `
 
     <main id='home'>
         <div class="about__me">
-            <img src="./img/avatar.jpg" alt="user avatar" width="30%">
+            <img src="img/avatar.jpg" alt="user avatar" width="30%">
             <h1>Andreas Lind</h1>
             <h3>.NET Student</h3>
             <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
@@ -20,7 +20,7 @@ const Projects = {
         
         <header id="site_header" class="container d_flex">
             <div class="bio__media">
-                <img src="./img/avatar.jpg" alt="user avatar">
+                <img src="img/avatar.jpg" alt="user avatar">
                 <div class="bio__media__text">
                     <h1>Andreas Lind</h1>
                     <h3>.NET student</h3>
@@ -61,7 +61,7 @@ const Projects = {
 
                             <div class="meta__data d_flex">
                                 <div class="date">
-                                    <h5>Update at</h5>
+                                    <h5>Updated at</h5>
                                     <div> {{ new Date(project.updated_at).toDateString()}}</div>
                                 </div>
                                 <img class="avatar" :src="project.owner.avatar_url">
