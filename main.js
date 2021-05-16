@@ -7,7 +7,7 @@ const Home = {template: `
             <img src="./img/avatar.jpg" alt="user avatar" width="30%">
             <h1>Andreas Lind</h1>
             <h3>.NET Student</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
             <div class="skills_projects_link">
                 <router-link to="/projects"> Projects | Skills </router-link>
             </div>
@@ -24,7 +24,7 @@ const Projects = {
                 <div class="bio__media__text">
                     <h1>Andreas Lind</h1>
                     <h3>.NET student</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
                 </div>
             </div> 
             <nav>

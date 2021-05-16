@@ -1,0 +1,158 @@
+body {
+    background-color:rgb(243, 243, 243);
+    margin: 5px 10px 5px 10px;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.header-bg {
+    position: relative;
+    height: 250px;
+    background-image: url("img/IMG_2530.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-bg__heading {
+    line-height: 49px;
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    left: 22%;
+    top: 45px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    color:rgb(243, 243, 243);
+}
+.header-bg__heading-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: white;
+}
+#home{
+    width: 1000px;
+     margin-left: auto;
+     margin-right: auto;
+}
+header nav {
+    background-color:lightgray;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;   
+}
+nav a {
+    text-decoration: none;
+    color: #444;
+    transition: all .2s ease;
+    
+}
+nav a:hover {
+    color: black;
+    font-weight: 400;
+}
+nav button{
+    align-items: flex-end;
+}
+#leftmenu {
+    background-color: rgb(216, 216, 211);
+    float: left;
+    width: 25%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height:600px;
+    border:  rgb(216, 216, 211);
+    border-radius: 2%;
+}
+#leftmenu div{
+margin-left: 5%;
+}
+#leftmenu input{
+    margin-bottom: 1%;
+}
+#leftmenu label{
+    margin-bottom: 30%;
+}
+#button{
+    margin-top: 10%;
+    width: 40%;
+}
+#main {
+    float: right;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 300px;
+}
+#main section{
+    margin-top: 7%;
+}
+#main article{
+    margin-left: 5%;
+}
+#main h2{
+   padding-top: 2%;
+}
+section img{
+    margin-bottom: 10%;
+}
+
+#aboutme{
+    background-color: rgb(216, 216, 211);
+    border: rgb(216, 216, 211);
+    border-radius: 5%;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#project1 div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+}
+#project2{
+    background-color: rgb(216, 216, 211);
+    border: rgb(216, 216, 211);
+    border-radius: 5%;
+}
+input {
+    display: flex;
+    justify-content: space-around;
+    margin: 2;
+    font-size: 1rem;
+    transition: all 1s ease;
+}
+footer {
+    background-color: lightslategray;
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    height: 150px;
+    padding: 4rem 6rem 4rem 2rem;
+}
+footer article {
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: white;
+    width: auto;
+    height: 150px;
+    border: rgb(82, 54, 12);
+    border-radius: 5%;
+}
+#summary{
+    margin-right: 20px;
+}
+#contact div{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+#contact > div > span{
+    margin-left: 15px;
+}
+canvas{
+     background: rgb(202, 199, 199);
+     display: block; 
+     margin: 0 auto; 
+}
