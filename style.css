@@ -179,7 +179,7 @@ main#home {
     margin: auto;
     text-align: center;
     content: "";
-    width: 150px;
+    width: 160px;
     height: 2px;
     background-color: #DB5461;
     transition: background-color 0.5s ease-in-out;
