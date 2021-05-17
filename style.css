@@ -216,8 +216,6 @@ nav a:hover {
     margin-top: 4rem;
     
 }
-
-
 #portfolio .projects {
     display: flex;
     flex-wrap: wrap;
@@ -255,8 +253,6 @@ nav a:hover {
     border: 5px solid #3D5467;
     border-radius: 35px;
 }
-
-
 .avatar {
     width: 30px;
     height: 30px;

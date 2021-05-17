@@ -1,5 +1,4 @@
-
-// Create route components
+// Route components
 const Home = {template: `
 
     <main id='home'>
@@ -40,13 +39,13 @@ const Projects = {
         
             <!-- Show an error message if the REST API doesn't work -->
             <div class="error" v-if="errors">
-                Sorry! It seems we can't fetch data right now 😥
+                Sorry! It seems we can't fetch data right now.
             </div>
             <!-- Otherwise show a section for our portfolio projects and skills section-->
             <section id="portfolio" v-else>
                 <!-- loading message -->
                 <div class="loading" v-if="loading">
-                    😴 Loading ...
+                    Loading projects & skills from GitHub ...
                 </div>
                 
                 <!-- show the projects -->
@@ -89,7 +88,7 @@ const Projects = {
                     </div>
                     
                     <div id="skills_section">
-                        <h2>Development Skills</h2>
+                        <h2>Skills</h2>
                         <ul class="skills"> 
                             <li v-for="skill in skills">{{skill}}</li>
                         </ul>
@@ -147,7 +146,6 @@ const Projects = {
             if(this.projectsList.length <= this.projects.length ) {
                 this.projectsCount += 5;
                 this.getProjects();
-                // this.projectsList = this.projects.slice(0, this.projectsCount);
             }
         },
         trimTitle(text){
@@ -167,14 +165,12 @@ const Projects = {
             return text;
         }
     },
-    mounted(){
-      //this.fetchData();  
+    mounted(){  
       setTimeout(this.fetchData, 2000);
     }
 }
 
-// Define routes
-
+// define routes
 const routes = [
     {path: '/', component: Home},
     {path: '/projects', component: Projects},
@@ -187,7 +183,8 @@ const router = new VueRouter({
 })
 
 // create and mount the vue instance
-
 const app = new Vue({
     router
 }).$mount('#app')
+
+// 😥😴 
