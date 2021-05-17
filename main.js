@@ -1,11 +1,12 @@
 // Route components
-const Home = {template: `
+const Home = {
+    template: `
 
     <main id='home'>
         <div class="about__me">
             <img src="./img/avatar.svg" alt="user avatar" width="30%">
             <h1>Andreas Lind</h1>
-            <h3>.NET Student</h3>
+            <h3>.NET student</h3>
             <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
             <div class="skills_projects_link">
                 <router-link to="/projects"> Projects | Skills </router-link>
@@ -31,6 +32,12 @@ const Projects = {
                 <router-link to="/projects" class="p_2">Projects</router-link>
                 <a :href="gitHubLink" target="_blank">
                     <i class="fab fa-github fa-lg fa-fw"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/andreas-lind31/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:andreaslind31@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </nav>
         </header>
@@ -104,7 +111,7 @@ const Projects = {
 
     </div>
     `,
-    data() { 
+    data() {
         return {
             projects: [],
             projectsList: null,
@@ -112,68 +119,68 @@ const Projects = {
             projectsCount: 5,
             perPage: 20,
             page: 1,
-            loading : true,
+            loading: true,
             errors: false,
             gitHubLink: 'https://github.com/andreaslind31'
-            }
+        }
     },
-    methods:{
+    methods: {
         fetchData: function () {
             axios.get(`https://api.github.com/users/andreaslind31/repos?per_page=${this.perPage}&page=${this.page}`)
-                .then(response => { 
+                .then(response => {
                     console.log(response);
                     this.projects = response.data;
-                    this.projects.forEach( project => {
-                        if(project.language !== null && !this.skills.includes(project.language)) {
+                    this.projects.forEach(project => {
+                        if (project.language !== null && !this.skills.includes(project.language)) {
                             this.skills.push(project.language)
                         }
                     })
 
                 })
-                .catch(error => { 
+                .catch(error => {
                     console.log(error);
                     this.errors = true;
-            }).finally( ()=> {
-                this.loading = false;
-                this.getProjects();
-            })
-        }, 
-        getProjects(){
+                }).finally(() => {
+                    this.loading = false;
+                    this.getProjects();
+                })
+        },
+        getProjects() {
             this.projectsList = this.projects.slice(0, this.projectsCount);
             return this.projectsList;
         },
-        loadMore(){
-            if(this.projectsList.length <= this.projects.length ) {
+        loadMore() {
+            if (this.projectsList.length <= this.projects.length) {
                 this.projectsCount += 5;
                 this.getProjects();
             }
         },
-        trimTitle(text){
+        trimTitle(text) {
             const title = text.replaceAll("-", " ").replaceAll("_", " ");
-            if(title.length > 15) {
+            if (title.length > 15) {
                 return title.slice(0, 12) + ' ...';
-            } 
+            }
             return title
         },
-        trimText(text){
-            
-            if(text === null) {
+        trimText(text) {
+
+            if (text === null) {
                 return 'This project has no description yet!'
-            } else if(text.length > 100) {
-                 return text.slice(0, 100) + ' ...'
-            } 
+            } else if (text.length > 100) {
+                return text.slice(0, 100) + ' ...'
+            }
             return text;
         }
     },
-    mounted(){  
-      setTimeout(this.fetchData, 2000);
+    mounted() {
+        setTimeout(this.fetchData, 2000);
     }
 }
 
 // define routes
 const routes = [
-    {path: '/', component: Home},
-    {path: '/projects', component: Projects},
+    { path: '/', component: Home },
+    { path: '/projects', component: Projects },
 ];
 
 
