@@ -227,7 +227,7 @@ nav a:hover {
     background-position: top left;
 }
 #skills_section h2 {
-    margin-left: 180px;
+    margin-left: 160px;
     font-size: 44px;
     color: #F1EDEE;
     line-height: 2rem;
@@ -261,7 +261,6 @@ nav a:hover {
     transform: rotate3d(360,0,0,180deg);
 }
 
-
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -271,5 +270,8 @@ footer {
     .card {
         flex-basis: 100%;
         width: 100%;
+    }
+    #skills_section{
+        background-size:30%;
     }
 }
