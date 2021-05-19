@@ -98,13 +98,13 @@ const Projects = {
                         <h2>Skills</h2>
                         <ul class="skills"> 
                             <li v-for="skill in skills">{{skill}}</li>
+                            <li>T-SQL</li>
+                            <li>Vue.js</li>
+                            <li>Git</li>
+                            <li>Scrum</li>
                         </ul>
                     </div>
-
                 </div>
-
-                
-
             </section>
         
         </main>
