@@ -1,4 +1,4 @@
-// Route components
+// route components
 const Home = {
     template: `
 
@@ -7,7 +7,7 @@ const Home = {
             <img src="./img/avatar.svg" alt="user avatar" width="30%">
             <h1>Andreas Lind</h1>
             <h3>.NET student</h3>
-            <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
+            <p>A well-structured developer student with years of experience <br>from the Swedish Armed Forces.</p>
             <div class="skills_projects_link">
                 <router-link to="/projects"> Projects | Skills </router-link>
             </div>
@@ -24,7 +24,7 @@ const Projects = {
                 <div class="bio__media__text">
                     <h1>Andreas Lind</h1>
                     <h3>.NET student</h3>
-                    <p>A well-structured developer student with years of experience <br>from the Armed Forces.</p>
+                    <p>A well-structured developer student with years of experience <br>from the Swedish Armed Forces.</p>
                 </div>
             </div> 
             <nav>
