@@ -100,7 +100,6 @@ const Projects = {
                             <li v-for="skill in skills">{{skill}}</li>
                             <li>Git</li>
                             <li>T-SQL</li>
-                            <li>Vue.js</li>
                             <li>Scrum</li>
                         </ul>
                     </div>
