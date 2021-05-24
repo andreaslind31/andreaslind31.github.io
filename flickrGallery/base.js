@@ -81,7 +81,7 @@ async function getPhotos() {
 
         img.src = url;
         img.setAttribute("class", "pictures");
-        img.setAttribute("onClick", "OpenImg();currentImg(" + imgCounter + ")");
+        img.setAttribute("onClick", "openLightbox();currentImg(" + imgCounter + ")");
         imgCounter++;
         gallery.appendChild(img);
 
