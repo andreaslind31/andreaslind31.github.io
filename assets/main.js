@@ -97,14 +97,14 @@ const Projects = {
                     <div class="card__static">
                         <div class="card__static__text">
                             <div> 
-                                <h3>Superhero app</h3>
-                                <p>A web app done with .NET 5, Razor pages, HTML, CSS, JS. Published to Azure.</p>
+                                <h3>"Bookingsystem"</h3>
+                                <p>This is an ongoing project. More info will be released soon...</p>
                             </div>
                         </div>
 
                         <div class="card__static__img"></div>
                         <div class="card__static__button">
-                            <a href="https://superhero-demo.azurewebsites.net/" target="_blank">
+                            <a href="" target="_blank">
                                 Page
                             </a>
                         </div>
@@ -122,7 +122,7 @@ const Projects = {
                                 <a href="https://andreaslind31.github.io/flickrGallery" target="_blank">
                                     Page
                                 </a>
-                        </div>
+                            </div>
                     </div>
                 </div>
             </section>
