@@ -1,48 +1,5 @@
 // route components
-const Project1 = {
-    template: `
-    
-    `
-}
-const Contact = {
-    template: `
-    <div>
-        
-        <header id="site_header" class="container d_flex">
-            <div class="bio__media">
-                <img src="img/avatar.svg" alt="user avatar">
-                <div class="bio__media__text">
-                    <h1>Andreas Lind</h1>
-                    <h3>.NET student</h3>
-                    <p>A well-structured developer student with years of experience <br>from the Swedish Armed Forces.</p>
-                </div>
-            </div> 
-            <nav>
-                <router-link to="/" class="p_2">Home</router-link>
-                <router-link to="/projects" class="p_2">Projects</router-link>
-                <router-link to="/contact" class="p_2">Contact</router-link>
-                <a :href="gitHubLink" target="_blank">
-                    <i class="fab fa-github fa-lg fa-fw"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/andreas-lind31/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:andreaslind31@gmail.com" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </nav>
-        </header>
-    
-        <main class="container">
-    
-        
-        
-    
-        </main>
 
-    </div>
-    `
-}
 const Home = {
     template: `
 
@@ -54,9 +11,6 @@ const Home = {
             <p>A well-structured developer student with years of experience <br>from the Swedish Armed Forces.</p>
             <div class="skills_projects_link">
                 <router-link to="/projects"> Projects | Skills </router-link>
-            </div>
-            <div class="contact_link_link">
-                <router-link to="/contact" class="p_2">Contact</router-link>
             </div>
         </div>
     </main>
@@ -77,7 +31,6 @@ const Projects = {
             <nav>
                 <router-link to="/" class="p_2">Home</router-link>
                 <router-link to="/projects" class="p_2">Projects</router-link>
-                <router-link to="/contact" class="p_2">Contact</router-link>
                 <a :href="gitHubLink" target="_blank">
                     <i class="fab fa-github fa-lg fa-fw"></i>
                 </a>
@@ -91,20 +44,20 @@ const Projects = {
         </header>
         
         <main class="container">
-            <section id="static">
+            <section class="margin-t">
             <h4>Published projects</h4>
-                <div class="grid__static">
+            <div class="projects">
                     <div class="card__static">
                         <div class="card__static__text">
                             <div> 
-                                <h3>"Bookingsystem"</h3>
-                                <p>This is an ongoing project. More info will be released soon...</p>
+                                <a href="http://booking.greenroomtraining.se"><h3>Greenroomtraining</h3></a>
+                                <p>A bookingsystem for greenroomtraining.se. Made as an .NET MVC app, with bootstrap.</p>
                             </div>
                         </div>
 
                         <div class="card__static__img"></div>
                         <div class="card__static__button">
-                            <a href="" target="_blank">
+                            <a href="http://booking.greenroomtraining.se" target="_blank">
                                 Page
                             </a>
                         </div>
@@ -132,7 +85,7 @@ const Projects = {
                 Sorry! It seems we can't fetch data from GitHub right now.
             </div>
             <!-- Otherwise show a section for our portfolio projects and skills section-->
-            <section id="portfolio" v-else>
+            <section class="margin-t" v-else>
             <h4>Code from GitHub</h4>
                 <!-- loading message -->
                 <div class="loading" v-if="loading">
@@ -183,7 +136,8 @@ const Projects = {
                         <ul class="skills"> 
                             <li v-for="skill in skills">{{skill}}</li>
                             <li>Git</li>
-                            <li>T-SQL</li>
+                            <li>MS SQL</li>
+                            <li>MySQL</li>
                             <li>Scrum</li>
                         </ul>
                     </div>
@@ -264,8 +218,6 @@ const Projects = {
 const routes = [
     { path: '/', component: Home },
     { path: '/projects', component: Projects },
-    { path: '/contact', component: Contact },
-    { path: '/project1', component: Project1 },
 ];
 
 

@@ -33,8 +33,85 @@ a:hover {
 .p_2{
     padding: 0.5rem;
 }
+.margin-t {
+    margin-top: 4rem;
+    
+}
+.margin-t .projects {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+/* #portfolio {
+    margin-top: 4rem;
+    
+}
+#portfolio .projects {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+} */
 
+.card__static {
+    position: relative;
+    display: flex;
+    max-width: 450px;
+    height: 350px;
+    min-height: 350px;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+    flex-grow: 1;
+    flex-basis: calc(100% /2);
+    align-items: center;
+    justify-content: space-between;
+}
+.card__static > .card__static__text {
+    max-width: calc((100% / 3) *2);
+    text-align: right;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
 
+}
+.card__static__img {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    background-image: url(/img/cards_static_img.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    z-index: -1;
+    left: 60%;
+    transform: translateX(-50%);
+    border-radius: 85px 0 100px 25px;
+
+}
+.card__static__button a {
+    background: #F1EDEE;
+    border: 5px solid #3D5467;
+    box-sizing: border-box;
+    border-radius: 54px;
+    padding: 0.5rem 1rem;
+    font-weight: 900;
+    color: #3D5467;
+}
+.card__static__button a:hover {
+    cursor: pointer;
+    background: #324555;
+    color: white;
+    border-color: #DB5461;
+    transition: 1s;
+}
+.card__static__text h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
 .bio__media {
     display: flex;
     justify-content: flex-start;
@@ -118,76 +195,6 @@ a:hover {
     text-transform: uppercase;
     font-size: 1.5rem;
 }
-
-#static {
-    margin-top: 4rem;
-    
-}
-.grid__static{
-    display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
-}
-.card__static {
-    position: relative;
-    display: flex;
-    max-width: 450px;
-    height: 350px;
-    min-height: 350px;
-    padding: 0.5rem;
-    margin-bottom: 3rem;
-    flex-grow: 1;
-    flex-basis: calc(100% /2);
-    align-items: center;
-    justify-content: space-between;
-}
-.card__static > .card__static__text {
-    max-width: calc((100% / 3) *2);
-    text-align: right;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    overflow: hidden;
-
-}
-.card__static__img {
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    background-image: url(/img/cards_static_img.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-    z-index: -1;
-    left: 60%;
-    transform: translateX(-50%);
-    border-radius: 85px 0 100px 25px;
-
-}
-.card__static__button a {
-    background: #F1EDEE;
-    border: 5px solid #3D5467;
-    box-sizing: border-box;
-    border-radius: 54px;
-    padding: 0.5rem 1rem;
-    font-weight: 900;
-    color: #3D5467;
-}
-.card__static__button a:hover {
-    cursor: pointer;
-    background: #324555;
-    color: white;
-    border-color: #DB5461;
-    transition: 1s;
-}
-.card__static__text h3 {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-}
-
 
 main#home {
     width: 100%;
@@ -303,19 +310,6 @@ nav a:hover {
     color: #DB5461;
 }
 
-
-#portfolio {
-    margin-top: 4rem;
-    
-}
-#portfolio .projects {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-
-
 #skills_section {
     margin-top: 4rem;
     min-height: 300px;
@@ -365,6 +359,7 @@ footer {
 }
 
 @media screen and (max-width: 475px) {
+
     .card {
         flex-basis: 100%;
         width: 100%;
