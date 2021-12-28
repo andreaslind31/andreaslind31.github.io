@@ -6,7 +6,7 @@ const Home = {
     <main id='home'>
         <div class="about__me">
             <img src="./img/avatar.svg" alt="user avatar" width="30%">
-            <h1>Andreas Lind</h1>
+            <h1><router-link to="/projects" class="reversed_link"> Andreas Lind </router-link></h1>
             <h3>.NET student</h3>
             <p>A well-structured developer student with years of experience <br>from the Swedish Armed Forces.</p>
             <div class="skills_projects_link">
@@ -17,8 +17,7 @@ const Home = {
 `}
 const Projects = {
     template: `
-    <div>
-        
+    <div> 
         <header id="site_header" class="container d_flex">
             <div class="bio__media">
                 <img src="img/avatar.svg" alt="user avatar">

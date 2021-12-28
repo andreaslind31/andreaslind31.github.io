@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
@@ -230,6 +231,16 @@ main#home {
     font-weight: 100;
     font-size: 22px;
     padding: 2rem;
+}
+.reversed_link {
+    margin: 20px 0 0;
+    font-size: 36px;
+    font-weight: 900;
+    color: #DB5461;
+}
+.reversed_link:hover {
+    color: white;
+    transition: all 0.5s ease-in-out;
 }
 .skills_projects_link {
     position: relative;
